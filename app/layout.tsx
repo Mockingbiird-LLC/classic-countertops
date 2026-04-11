@@ -3,6 +3,8 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ScrollProgressBar from '@/components/ScrollProgressBar';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -52,6 +54,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className={`${inter.className} bg-[#FAFAF8] text-[#1A1A1A] antialiased`}>
+        <ScrollProgressBar />
+        <ScrollToTopButton />
         <Navigation />
         <main>{children}</main>
         <Footer />

@@ -8,9 +8,10 @@ interface Props {
   className?: string;
   delay?: number;
   direction?: 'up' | 'left' | 'right' | 'none';
+  withScale?: boolean;
 }
 
-export default function AnimatedSection({ children, className = '', delay = 0, direction = 'up' }: Props) {
+export default function AnimatedSection({ children, className = '', delay = 0, direction = 'up', withScale = false }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -33,13 +34,15 @@ export default function AnimatedSection({ children, className = '', delay = 0, d
       opacity: 0,
       y: direction === 'up' ? 40 : 0,
       x: direction === 'left' ? -40 : direction === 'right' ? 40 : 0,
+      scale: withScale ? 0.97 : 1,
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
+      scale: 1,
       transition: {
-        duration: 0.7,
+        duration: withScale ? 0.5 : 0.7,
         delay,
         ease: 'easeOut' as const,
       },

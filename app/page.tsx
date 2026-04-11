@@ -104,16 +104,25 @@ const testimonials = [
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const whyClassicRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 600], [0, 180]);
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const canvasParallaxY = useTransform(scrollY, [0, 400], [0, -40]);
+  const { scrollYProgress: whyClassicProgress } = useScroll({
+    target: whyClassicRef,
+    offset: ['start end', 'end start'],
+  });
+  const imageParallax = useTransform(whyClassicProgress, [0, 1], ['0px', '-30px']);
 
   return (
     <>
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen min-h-[620px] max-h-[900px] overflow-hidden flex items-center">
-        {/* Three.js 3D countertop scene */}
-        <ThreeCountertopHero />
+        {/* Three.js 3D countertop scene — canvas parallax on scroll */}
+        <motion.div style={{ y: canvasParallaxY }} className="absolute inset-0">
+          <ThreeCountertopHero />
+        </motion.div>
         {/* Subtle dark vignette at bottom */}
         <div className="absolute inset-0 pointer-events-none" style={{
           background: 'linear-gradient(to bottom, rgba(14,10,10,0.45) 0%, rgba(14,10,10,0.15) 40%, rgba(14,10,10,0.7) 100%)',
@@ -227,7 +236,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {serviceCards.map((card, i) => (
-              <AnimatedSection key={card.title} delay={i * 0.08}>
+              <AnimatedSection key={card.title} delay={i * 0.06}>
                 <Link href={card.href} className="group block bg-white border border-[#E8E4DC] p-8 hover:border-[#800020] hover:shadow-lg transition-all duration-300 h-full">
                   <div className="w-14 h-14 border border-[#E8E4DC] group-hover:border-[#800020] flex items-center justify-center text-[#800020] mb-6 transition-colors duration-300">
                     {card.icon}
@@ -283,15 +292,23 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY CLASSIC ── */}
-      <section className="py-28">
+      <section className="py-28" ref={whyClassicRef}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
               <div className="relative">
-                <div
-                  className="aspect-[4/5] bg-cover bg-center"
-                  style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=900&q=80&auto=format&fit=crop')` }}
-                />
+                <div className="aspect-[4/5] overflow-hidden">
+                  <motion.div
+                    className="w-full bg-cover bg-center"
+                    style={{
+                      backgroundImage: `url('https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=900&q=80&auto=format&fit=crop')`,
+                      y: imageParallax,
+                      willChange: 'transform',
+                      height: 'calc(100% + 60px)',
+                      marginTop: '-30px',
+                    }}
+                  />
+                </div>
                 <div className="absolute -bottom-6 -right-6 bg-[#800020] p-8 text-white">
                   <div className="text-4xl font-bold" style={{ fontFamily: 'var(--font-playfair)' }}>20+</div>
                   <div className="text-xs tracking-widest uppercase mt-1">Years Serving<br />Northeast Ohio</div>
@@ -352,7 +369,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <AnimatedSection key={t.author} delay={i * 0.1} className="bg-white p-10 border border-[#E8E4DC] relative">
+              <AnimatedSection key={t.author} delay={i * 0.1} withScale className="bg-white p-10 border border-[#E8E4DC] relative">
                 <div className="absolute top-6 right-8 text-[#800020]/15 text-8xl font-serif leading-none select-none">&ldquo;</div>
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, j) => (
@@ -424,27 +441,37 @@ export default function HomePage() {
                   className="relative w-full drop-shadow-2xl"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  {/* Ohio state outline */}
-                  <path
+                  {/* Ohio state outline — draws on scroll into view */}
+                  <motion.path
                     d="M60,30 L370,30 L390,80 L390,240 L340,300 L320,340 L280,350 L240,320 L200,340 L160,330 L100,300 L60,250 L30,200 L30,100 Z"
                     fill="#1a1010"
                     stroke="#800020"
                     strokeWidth="2"
                     opacity="0.7"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{ duration: 1.2, ease: 'easeInOut' }}
+                    viewport={{ once: true }}
                   />
-                  {/* NEO region highlight */}
-                  <path
+                  {/* NEO region highlight — fades in after outline draws */}
+                  <motion.path
                     d="M180,30 L370,30 L390,80 L390,180 L320,220 L260,210 L200,230 L160,200 L150,140 L160,80 Z"
                     fill="#800020"
-                    opacity="0.25"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 0.25 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: true }}
                   />
-                  <path
+                  <motion.path
                     d="M180,30 L370,30 L390,80 L390,180 L320,220 L260,210 L200,230 L160,200 L150,140 L160,80 Z"
                     fill="none"
                     stroke="#800020"
                     strokeWidth="1.5"
                     strokeDasharray="6 3"
-                    opacity="0.6"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 0.6 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: true }}
                   />
 
                   {/* City dots */}
