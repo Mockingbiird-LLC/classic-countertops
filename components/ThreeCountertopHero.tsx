@@ -18,6 +18,23 @@ export default function ThreeCountertopHero() {
     let particles: import('three').Points;
     let running = true;
 
+    // Returns true when the canvas is in a portrait/narrow mobile layout
+    const isMobile = () => canvas.clientWidth < canvas.clientHeight || canvas.clientWidth < 640;
+
+    // Apply camera position based on viewport shape
+    const applyCameraForViewport = () => {
+      if (isMobile()) {
+        // Higher, closer, steeper angle — surface reads as a flat countertop
+        camera.position.set(0, 5.5, 4.5);
+        camera.fov = 52;
+      } else {
+        camera.position.set(0, 3.5, 9);
+        camera.fov = 45;
+      }
+      camera.lookAt(0, 0, 0);
+      camera.updateProjectionMatrix();
+    };
+
     async function init() {
       if (!canvas) return;
       THREE = await import('three');
@@ -29,8 +46,7 @@ export default function ThreeCountertopHero() {
 
       // Camera
       camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 200);
-      camera.position.set(0, 3.5, 9);
-      camera.lookAt(0, 0, 0);
+      applyCameraForViewport();
 
       // Renderer
       renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
@@ -170,7 +186,7 @@ export default function ThreeCountertopHero() {
         const w = canvas.clientWidth;
         const h = canvas.clientHeight;
         camera.aspect = w / h;
-        camera.updateProjectionMatrix();
+        applyCameraForViewport();
         renderer.setSize(w, h);
       };
       window.addEventListener('resize', onResize);
@@ -182,14 +198,23 @@ export default function ThreeCountertopHero() {
         animRef.current = requestAnimationFrame(animate);
         t += 0.008;
 
+        const mobile = isMobile();
+
         // Gentle slab bob and tilt
         slab.position.y = Math.sin(t * 0.7) * 0.04;
         slab.rotation.y = Math.sin(t * 0.4) * 0.06;
         slab.rotation.x = Math.sin(t * 0.3) * 0.015;
 
-        // Slow camera arc
-        camera.position.x = Math.sin(t * 0.18) * 1.5;
-        camera.position.y = 3.5 + Math.sin(t * 0.25) * 0.3;
+        // Slow camera arc — tighter on mobile to keep countertop framed
+        if (mobile) {
+          camera.position.x = Math.sin(t * 0.18) * 0.6;
+          camera.position.y = 5.5 + Math.sin(t * 0.25) * 0.2;
+          camera.position.z = 4.5;
+        } else {
+          camera.position.x = Math.sin(t * 0.18) * 1.5;
+          camera.position.y = 3.5 + Math.sin(t * 0.25) * 0.3;
+          camera.position.z = 9;
+        }
         camera.lookAt(0, 0, 0);
 
         // Particles drift upward
