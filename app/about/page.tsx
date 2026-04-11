@@ -77,8 +77,8 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-10 h-px bg-[#C4993C]" />
-              <span className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium">Our Story</span>
+              <span className="w-10 h-px bg-[#800020]" />
+              <span className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">Our Story</span>
             </div>
             <h1 className="text-white text-5xl md:text-6xl leading-tight mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
               Built on Craft,<br />Driven by Community
@@ -101,13 +101,13 @@ export default function AboutPage() {
                   style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=800&q=80&auto=format&fit=crop')` }}
                 />
                 {/* Decorative gold bar */}
-                <div className="absolute top-0 -left-4 w-1 h-32 bg-[#C4993C]" />
-                <div className="absolute bottom-0 -right-4 w-1 h-32 bg-[#C4993C]" />
+                <div className="absolute top-0 -left-4 w-1 h-32 bg-[#800020]" />
+                <div className="absolute bottom-0 -right-4 w-1 h-32 bg-[#800020]" />
               </div>
             </AnimatedSection>
 
             <AnimatedSection direction="right" className="space-y-6">
-              <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium">Who We Are</p>
+              <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">Who We Are</p>
               <h2 className="text-[#1C1C1C] text-4xl leading-tight" style={{ fontFamily: 'var(--font-playfair)' }}>
                 Akron&apos;s Trusted Countertop Experts
               </h2>
@@ -134,7 +134,7 @@ export default function AboutPage() {
       <section className="py-24 bg-[#F7F4EF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium mb-4">What We Stand For</p>
+            <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">What We Stand For</p>
             <h2 className="text-[#1C1C1C] text-4xl md:text-5xl" style={{ fontFamily: 'var(--font-playfair)' }}>
               Our Core Values
             </h2>
@@ -144,7 +144,7 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 0.1} className="bg-white border border-[#E8E4DC] p-8">
-                <div className="w-12 h-12 border border-[#C4993C] flex items-center justify-center text-[#C4993C] mb-6">
+                <div className="w-12 h-12 border border-[#800020] flex items-center justify-center text-[#800020] mb-6">
                   {v.icon}
                 </div>
                 <h3 className="text-[#1C1C1C] font-semibold text-lg mb-3">{v.title}</h3>
@@ -159,7 +159,7 @@ export default function AboutPage() {
       <section className="py-28 bg-[#FAFAF8]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium mb-4">The People Behind the Work</p>
+            <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">The People Behind the Work</p>
             <h2 className="text-[#1C1C1C] text-4xl md:text-5xl" style={{ fontFamily: 'var(--font-playfair)' }}>
               Meet Our Team
             </h2>
@@ -169,12 +169,12 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {team.map((member, i) => (
               <AnimatedSection key={member.name} delay={i * 0.1} className="border border-[#E8E4DC] bg-white p-10">
-                <div className="w-16 h-16 bg-[#C4993C] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <div className="w-16 h-16 bg-[#800020] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
                   {member.name[0]}
                 </div>
                 <h3 className="text-[#1C1C1C] font-semibold text-xl mb-1">{member.name}</h3>
-                <p className="text-[#C4993C] text-xs tracking-wider uppercase mb-4">{member.role}</p>
-                <div className="w-8 h-px bg-[#C4993C] mb-5" />
+                <p className="text-[#800020] text-xs tracking-wider uppercase mb-4">{member.role}</p>
+                <div className="w-8 h-px bg-[#800020] mb-5" />
                 <p className="text-[#6B6B6B] text-sm leading-relaxed">{member.bio}</p>
               </AnimatedSection>
             ))}
@@ -187,7 +187,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium mb-4">Where We Work</p>
+              <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">Where We Work</p>
               <h2 className="text-white text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
                 Serving Northeast Ohio
               </h2>
@@ -209,26 +209,26 @@ export default function AboutPage() {
                 <h3 className="text-white font-semibold text-xl mb-6">Get In Touch</h3>
                 <div className="space-y-4 text-sm text-white/60">
                   <div className="flex gap-4">
-                    <svg className="w-5 h-5 text-[#C4993C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
                     <span>1519 Kenmore Blvd, Akron, Ohio 44314</span>
                   </div>
                   <div className="flex gap-4">
-                    <svg className="w-5 h-5 text-[#C4993C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                     </svg>
-                    <a href="tel:3308824220" className="hover:text-[#C4993C] transition-colors">(330) 882-4220</a>
+                    <a href="tel:3308824220" className="hover:text-[#800020] transition-colors">(330) 882-4220</a>
                   </div>
                   <div className="flex gap-4">
-                    <svg className="w-5 h-5 text-[#C4993C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
-                    <a href="mailto:bill@classiccountertops.net" className="hover:text-[#C4993C] transition-colors">bill@classiccountertops.net</a>
+                    <a href="mailto:bill@classiccountertops.net" className="hover:text-[#800020] transition-colors">bill@classiccountertops.net</a>
                   </div>
                   <div className="flex gap-4">
-                    <svg className="w-5 h-5 text-[#C4993C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                     <span>Mon–Fri: 8:00 AM – 5:00 PM (By Appointment)</span>

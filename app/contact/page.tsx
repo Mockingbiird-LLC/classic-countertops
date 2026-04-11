@@ -53,7 +53,7 @@ function ContactForm() {
     setTimeout(() => setStatus('success'), 500);
   };
 
-  const inputClass = 'w-full bg-white border border-[#E8E4DC] px-4 py-3 text-[#1C1C1C] text-sm placeholder-[#9B9B9B] focus:outline-none focus:border-[#C4993C] transition-colors';
+  const inputClass = 'w-full bg-white border border-[#E8E4DC] px-4 py-3 text-[#1C1C1C] text-sm placeholder-[#9B9B9B] focus:outline-none focus:border-[#800020] transition-colors';
   const labelClass = 'block text-xs font-semibold tracking-widest uppercase text-[#6B6B6B] mb-2';
 
   return (
@@ -73,7 +73,7 @@ function ContactForm() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center py-12"
             >
-              <div className="w-16 h-16 border-2 border-[#C4993C] flex items-center justify-center text-[#C4993C] mx-auto mb-6">
+              <div className="w-16 h-16 border-2 border-[#800020] flex items-center justify-center text-[#800020] mx-auto mb-6">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
@@ -82,7 +82,7 @@ function ContactForm() {
               <p className="text-[#6B6B6B] text-sm">
                 Your email client should have opened. We&apos;ll respond within 1 business day.
                 <br />You can also reach us directly at{' '}
-                <a href="tel:3308824220" className="text-[#C4993C] hover:underline">(330) 882-4220</a>.
+                <a href="tel:3308824220" className="text-[#800020] hover:underline">(330) 882-4220</a>.
               </p>
             </motion.div>
           ) : (
@@ -171,7 +171,7 @@ function ContactForm() {
               </button>
 
               <p className="text-[#9B9B9B] text-xs text-center">
-                Or call us directly: <a href="tel:3308824220" className="text-[#C4993C] hover:underline">(330) 882-4220</a>
+                Or call us directly: <a href="tel:3308824220" className="text-[#800020] hover:underline">(330) 882-4220</a>
               </p>
             </motion.form>
           )}
@@ -181,7 +181,7 @@ function ContactForm() {
       {/* Contact info sidebar */}
       <AnimatedSection direction="right" className="space-y-8">
         <div>
-          <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium mb-4">Get In Touch</p>
+          <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">Get In Touch</p>
           <h2 className="text-[#1C1C1C] text-4xl leading-tight" style={{ fontFamily: 'var(--font-playfair)' }}>
             We&apos;d Love to Hear<br />About Your Project
           </h2>
@@ -219,7 +219,7 @@ function ContactForm() {
             },
           ].map((item) => (
             <div key={item.label} className="flex gap-4 group">
-              <div className="w-11 h-11 border border-[#E8E4DC] flex items-center justify-center text-[#C4993C] shrink-0 mt-0.5">
+              <div className="w-11 h-11 border border-[#E8E4DC] flex items-center justify-center text-[#800020] shrink-0 mt-0.5">
                 {item.icon}
               </div>
               <div>
@@ -229,7 +229,7 @@ function ContactForm() {
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : undefined}
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-[#1C1C1C] text-sm font-medium hover:text-[#C4993C] transition-colors whitespace-pre-line"
+                    className="text-[#1C1C1C] text-sm font-medium hover:text-[#800020] transition-colors whitespace-pre-line"
                   >
                     {item.content}
                   </a>
@@ -271,8 +271,8 @@ export default function ContactPage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-10 h-px bg-[#C4993C]" />
-              <span className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium">Start Your Project</span>
+              <span className="w-10 h-px bg-[#800020]" />
+              <span className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">Start Your Project</span>
             </div>
             <h1 className="text-white text-5xl md:text-6xl leading-tight mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
               Contact Us
@@ -297,7 +297,7 @@ export default function ContactPage() {
       <section className="py-24 bg-white border-t border-[#E8E4DC]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium mb-4">Common Questions</p>
+            <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">Common Questions</p>
             <h2 className="text-[#1C1C1C] text-3xl md:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
               Frequently Asked Questions
             </h2>
@@ -328,7 +328,7 @@ export default function ContactPage() {
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.06} className="border border-[#E8E4DC] p-6">
                 <h3 className="text-[#1C1C1C] font-semibold mb-3 flex gap-3">
-                  <span className="text-[#C4993C] shrink-0">Q.</span>
+                  <span className="text-[#800020] shrink-0">Q.</span>
                   {item.q}
                 </h3>
                 <p className="text-[#6B6B6B] text-sm leading-relaxed pl-6">{item.a}</p>

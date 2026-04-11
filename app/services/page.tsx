@@ -107,8 +107,8 @@ export default function ServicesPage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-10 h-px bg-[#C4993C]" />
-              <span className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium">What We Do</span>
+              <span className="w-10 h-px bg-[#800020]" />
+              <span className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">What We Do</span>
             </div>
             <h1 className="text-white text-5xl md:text-6xl leading-tight mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
               Our Services
@@ -124,7 +124,7 @@ export default function ServicesPage() {
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="px-5 py-2 border border-white/20 text-white/60 text-xs tracking-wide hover:border-[#C4993C] hover:text-[#C4993C] transition-colors"
+                className="px-5 py-2 border border-white/20 text-white/60 text-xs tracking-wide hover:border-[#800020] hover:text-[#800020] transition-colors"
               >
                 {s.name.split(' ')[0]}
               </a>
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                         style={{ backgroundImage: `url('${service.image}')` }}
                       />
                       {/* Number badge */}
-                      <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#C4993C] flex items-center justify-center">
+                      <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#800020] flex items-center justify-center">
                         <span className="text-white text-2xl font-bold" style={{ fontFamily: 'var(--font-playfair)' }}>
                           0{i + 1}
                         </span>
@@ -163,7 +163,7 @@ export default function ServicesPage() {
 
                   {/* Text */}
                   <AnimatedSection direction={isEven ? 'right' : 'left'} className={`space-y-6 ${!isEven ? 'lg:order-1' : ''}`}>
-                    <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium">{service.tagline}</p>
+                    <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">{service.tagline}</p>
                     <h2 className="text-[#1C1C1C] text-3xl md:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
                       {service.name}
                     </h2>
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                       <ul className="space-y-3">
                         {service.features.map((f) => (
                           <li key={f} className="flex gap-3 text-sm text-[#6B6B6B]">
-                            <svg className="w-4 h-4 text-[#C4993C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             {f}
@@ -184,7 +184,7 @@ export default function ServicesPage() {
                       </ul>
                     </div>
 
-                    <div className="border-l-2 border-[#C4993C] pl-5 py-2">
+                    <div className="border-l-2 border-[#800020] pl-5 py-2">
                       <p className="text-xs text-[#6B6B6B] uppercase tracking-widest mb-1 font-medium">Ideal For</p>
                       <p className="text-[#1C1C1C] text-sm">{service.ideal}</p>
                     </div>
@@ -210,7 +210,7 @@ export default function ServicesPage() {
       <section className="py-28 bg-[#1C1C1C]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <p className="text-[#C4993C] text-xs tracking-[0.25em] uppercase font-medium mb-4">How It Works</p>
+            <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">How It Works</p>
             <h2 className="text-white text-4xl md:text-5xl" style={{ fontFamily: 'var(--font-playfair)' }}>
               Our Process
             </h2>
@@ -226,14 +226,14 @@ export default function ServicesPage() {
             ].map((step, i) => (
               <AnimatedSection key={step.step} delay={i * 0.1} className="relative">
                 <div className="border border-white/10 p-8 h-full">
-                  <div className="text-[#C4993C]/30 text-6xl font-bold mb-6 leading-none" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <div className="text-[#800020]/30 text-6xl font-bold mb-6 leading-none" style={{ fontFamily: 'var(--font-playfair)' }}>
                     {step.step}
                   </div>
                   <h3 className="text-white font-semibold text-lg mb-3">{step.title}</h3>
                   <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
                 </div>
                 {i < 3 && (
-                  <div className="hidden lg:flex absolute top-1/2 -right-4 w-8 items-center justify-center text-[#C4993C]/40 z-10">
+                  <div className="hidden lg:flex absolute top-1/2 -right-4 w-8 items-center justify-center text-[#800020]/40 z-10">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -246,7 +246,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 bg-[#C4993C]">
+      <section className="py-24 bg-[#800020]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-white text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
@@ -256,7 +256,7 @@ export default function ServicesPage() {
               Contact us today for your free, no-obligation quote. We&apos;ll help you find the perfect countertop solution for your space and budget.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-[#C4993C]">
+              <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-[#800020]">
                 Request a Free Quote
               </Link>
               <a href="tel:3308824220" className="btn-outline border-white/60 text-white hover:bg-white/10">

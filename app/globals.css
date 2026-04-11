@@ -5,8 +5,8 @@
   --foreground: #1A1A1A;
   --stone-dark: #1C1C1C;
   --stone-mid: #2D2D2D;
-  --gold: #C4993C;
-  --gold-light: #D4AF55;
+  --gold: #800020;
+  --gold-light: #9B0026;
   --cream: #F7F4EF;
   --cream-dark: #EDE8E0;
   --text-mid: #6B6B6B;
@@ -42,13 +42,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Gold gradient utility */
+/* Primary gradient utility */
 .gold-gradient {
-  background: linear-gradient(135deg, #C4993C 0%, #D4AF55 50%, #C4993C 100%);
+  background: linear-gradient(135deg, #800020 0%, #9B0026 50%, #800020 100%);
 }
 
 .gold-text {
-  background: linear-gradient(135deg, #C4993C, #D4AF55);
+  background: linear-gradient(135deg, #800020, #9B0026);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,6 +76,7 @@ body {
   transition: width 0.3s ease;
 }
 
+
 .border-animate:hover::after {
   width: 100%;
 }
@@ -91,6 +92,7 @@ body {
   background: var(--gold);
   border-radius: 3px;
 }
+
 
 /* Stone texture overlay */
 .stone-texture {

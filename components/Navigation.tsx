@@ -44,12 +44,12 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 border-2 border-[#C4993C] flex items-center justify-center group-hover:bg-[#C4993C] transition-colors duration-300">
-                <span className="text-[#C4993C] group-hover:text-white font-bold text-sm transition-colors duration-300">CC</span>
+              <div className="w-10 h-10 border-2 border-[#800020] flex items-center justify-center group-hover:bg-[#800020] transition-colors duration-300">
+                <span className="text-[#800020] group-hover:text-white font-bold text-sm transition-colors duration-300">CC</span>
               </div>
               <div>
                 <div className="text-white font-semibold text-sm tracking-widest uppercase leading-none">Classic</div>
-                <div className="text-[#C4993C] font-light text-xs tracking-[0.2em] uppercase leading-none mt-0.5">Countertops</div>
+                <div className="text-[#800020] font-light text-xs tracking-[0.2em] uppercase leading-none mt-0.5">Countertops</div>
               </div>
             </Link>
 
@@ -75,7 +75,7 @@ export default function Navigation() {
                     href={link.href}
                     className={`relative text-xs font-medium tracking-widest uppercase transition-colors duration-200 border-animate pb-1 ${
                       isActive
-                        ? 'text-[#C4993C]'
+                        ? 'text-[#800020]'
                         : 'text-white/80 hover:text-white'
                     }`}
                   >
@@ -83,7 +83,7 @@ export default function Navigation() {
                     {isActive && (
                       <motion.div
                         layoutId="nav-underline"
-                        className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-[#C4993C]"
+                        className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-[#800020]"
                       />
                     )}
                   </Link>
@@ -115,7 +115,7 @@ export default function Navigation() {
 
         {/* Phone bar */}
         <div className={`hidden md:flex justify-end px-8 pb-2 transition-all duration-300 ${scrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
-          <a href="tel:3308824220" className="text-[#C4993C] text-xs tracking-wider hover:text-[#D4AF55] transition-colors">
+          <a href="tel:3308824220" className="text-[#800020] text-xs tracking-wider hover:text-[#9B0026] transition-colors">
             ✆ (330) 882-4220 — Mon–Fri 8AM–5PM
           </a>
         </div>
@@ -142,7 +142,7 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     className={`block text-2xl font-light tracking-wide ${
-                      pathname === link.href ? 'text-[#C4993C]' : 'text-white'
+                      pathname === link.href ? 'text-[#800020]' : 'text-white'
                     }`}
                   >
                     {link.label}
@@ -151,7 +151,7 @@ export default function Navigation() {
               ))}
             </nav>
             <div className="mt-12 pt-8 border-t border-white/10">
-              <a href="tel:3308824220" className="text-[#C4993C] text-lg">(330) 882-4220</a>
+              <a href="tel:3308824220" className="text-[#800020] text-lg">(330) 882-4220</a>
               <p className="text-white/40 text-sm mt-1">Mon–Fri, 8AM–5PM</p>
             </div>
           </motion.div>
