@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" fill="none" role="img" aria-label="Classic Countertops">
+  <!-- ===== ICON MARK (80×80) ===== -->
+  <rect x="1.5" y="1.5" width="77" height="77" stroke="#C4993C" stroke-width="1"/>
+  <polyline points="1.5,18 1.5,1.5 18,1.5" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <polyline points="62,1.5 78.5,1.5 78.5,18" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <polyline points="1.5,62 1.5,78.5 18,78.5" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <polyline points="62,78.5 78.5,78.5 78.5,62" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <path d="M60.67,29.91 A23,23,0,1,0,60.67,50.09 L51.1,50.09 A15,15,0,1,1,51.1,29.91 Z" fill="#C4993C"/>
+
+  <!-- ===== WORDMARK — dark text variant (for light backgrounds) ===== -->
+  <text x="100" y="35"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-size="15" font-weight="600"
+        fill="#1C1C1C" letter-spacing="6">CLASSIC</text>
+  <line x1="100" y1="44" x2="246" y2="44" stroke="#C4993C" stroke-width="0.75" opacity="0.8"/>
+  <text x="100" y="60"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-size="9.5" font-weight="300"
+        fill="#C4993C" letter-spacing="5.8">COUNTERTOPS</text>
+</svg>
