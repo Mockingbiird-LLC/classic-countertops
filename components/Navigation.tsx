@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { services } from '@/app/services/data';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -15,6 +16,7 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesExpanded, setServicesExpanded] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
@@ -132,23 +134,81 @@ export default function Navigation() {
             className="fixed inset-0 z-40 bg-[#1C1C1C] pt-24 px-8"
           >
             <nav className="flex flex-col gap-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.08 }}
-                >
-                  <Link
-                    href={link.href}
-                    className={`block text-2xl font-light tracking-wide ${
-                      pathname === link.href ? 'text-[#800020]' : 'text-white'
-                    }`}
+              {navLinks.map((link, i) => {
+                const isServices = link.href === '/services';
+                const isActive = pathname === link.href || (isServices && pathname.startsWith('/services'));
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.08 }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    {isServices ? (
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <Link
+                            href={link.href}
+                            className={`text-2xl font-light tracking-wide ${isActive ? 'text-[#800020]' : 'text-white'}`}
+                          >
+                            {link.label}
+                          </Link>
+                          <button
+                            onClick={() => setServicesExpanded(!servicesExpanded)}
+                            className="p-2 text-white/60 hover:text-white"
+                            aria-label="Toggle services menu"
+                          >
+                            <motion.svg
+                              animate={{ rotate: servicesExpanded ? 180 : 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="w-5 h-5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </motion.svg>
+                          </button>
+                        </div>
+                        <AnimatePresence>
+                          {servicesExpanded && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="mt-3 ml-4 flex flex-col gap-3 border-l border-[#800020]/40 pl-4">
+                                {services.map((s) => (
+                                  <Link
+                                    key={s.id}
+                                    href={`/services/${s.id}`}
+                                    className={`text-base font-light tracking-wide ${
+                                      pathname === `/services/${s.id}` ? 'text-[#800020]' : 'text-white/70 hover:text-white'
+                                    }`}
+                                  >
+                                    {s.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className={`block text-2xl font-light tracking-wide ${
+                          pathname === link.href ? 'text-[#800020]' : 'text-white'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </motion.div>
+                );
+              })}
             </nav>
             <div className="mt-12 pt-8 border-t border-white/10">
               <a href="tel:3308824220" className="text-[#800020] text-lg">(330) 882-4220</a>
