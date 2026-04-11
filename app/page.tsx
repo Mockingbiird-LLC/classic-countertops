@@ -183,7 +183,7 @@ export default function HomePage() {
           transition={{ delay: 1.2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-white/70 text-xs tracking-widest uppercase">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
@@ -410,7 +410,7 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <p className="text-white/40 text-sm">
+              <p className="text-white/70 text-sm">
                 Not sure if we cover your area? <a href="tel:3308824220" className="text-[#800020] hover:text-[#9B0026] underline transition-colors">(330) 882-4220</a>
               </p>
             </AnimatedSection>

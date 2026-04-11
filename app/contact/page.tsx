@@ -170,7 +170,7 @@ function ContactForm() {
                 </svg>
               </button>
 
-              <p className="text-[#9B9B9B] text-xs text-center">
+              <p className="text-[#6B6B6B] text-xs text-center">
                 Or call us directly: <a href="tel:3308824220" className="text-[#800020] hover:underline">(330) 882-4220</a>
               </p>
             </motion.form>

@@ -212,7 +212,7 @@ export default function Navigation() {
             </nav>
             <div className="mt-12 pt-8 border-t border-white/10">
               <a href="tel:3308824220" className="text-[#800020] text-lg">(330) 882-4220</a>
-              <p className="text-white/40 text-sm mt-1">Mon–Fri, 8AM–5PM</p>
+              <p className="text-white/70 text-sm mt-1">Mon–Fri, 8AM–5PM</p>
             </div>
           </motion.div>
         )}

@@ -42,7 +42,7 @@ export default async function ServicePage({
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-4">
-              <Link href="/services" className="text-white/40 text-xs tracking-[0.2em] uppercase hover:text-[#800020] transition-colors">
+              <Link href="/services" className="text-white/70 text-xs tracking-[0.2em] uppercase hover:text-[#800020] transition-colors">
                 Services
               </Link>
               <span className="w-4 h-px bg-white/30" />

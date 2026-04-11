@@ -99,7 +99,7 @@ export default function ServicesPage() {
                     {step.step}
                   </div>
                   <h3 className="text-white font-semibold text-lg mb-3">{step.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+                  <p className="text-white/70 text-sm leading-relaxed">{step.desc}</p>
                 </div>
                 {i < 3 && (
                   <div className="hidden lg:flex absolute top-1/2 -right-4 w-8 items-center justify-center text-[#800020]/40 z-10">
