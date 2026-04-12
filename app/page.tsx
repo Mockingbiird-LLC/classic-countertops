@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -263,17 +264,24 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
               <div className="relative">
-                <div className="aspect-[4/5] overflow-hidden">
+                <div className="aspect-[4/5] overflow-hidden relative">
                   <motion.div
-                    className="w-full bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('/kitchen-showcase.jpeg')`,
                       y: imageParallax,
                       willChange: 'transform',
                       height: 'calc(100% + 60px)',
                       marginTop: '-30px',
+                      position: 'relative',
                     }}
-                  />
+                  >
+                    <Image
+                      src="/kitchen-showcase.jpeg"
+                      alt="Classic Countertops kitchen showcase"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </motion.div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-[#800020] p-8 text-white">
                   <div className="text-4xl font-bold" style={{ fontFamily: 'var(--font-playfair)' }}>20+</div>
