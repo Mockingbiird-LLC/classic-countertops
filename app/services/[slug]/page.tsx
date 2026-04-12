@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 import AnimatedSection from '@/components/AnimatedSection';
 import { services } from '../data';
+
+const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.id }));
@@ -34,12 +37,16 @@ export default async function ServicePage({
   return (
     <>
       {/* ── PAGE HERO ── */}
-      <section className="relative pt-40 pb-24 bg-[#1C1C1C] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: `url('${service.image}')` }}
-        />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative pt-40 pb-24 bg-[#0e0a0a] overflow-hidden">
+        {/* Three.js countertop animation background */}
+        <div className="absolute inset-0 bg-[#0e0a0a]">
+          <ThreeCountertopHero />
+        </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.45) 60%, rgba(14,10,10,0.7) 100%)'
+        }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-4">
               <Link href="/services" className="text-white/70 text-xs tracking-[0.2em] uppercase hover:text-[#800020] transition-colors">

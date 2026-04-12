@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import AnimatedSection from '@/components/AnimatedSection';
 import { services } from './data';
+
+const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -12,12 +15,16 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── PAGE HERO ── */}
-      <section className="relative pt-40 pb-24 bg-[#1C1C1C] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=1400&q=60&auto=format&fit=crop')` }}
-        />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative pt-40 pb-24 bg-[#0e0a0a] overflow-hidden">
+        {/* Three.js countertop animation background */}
+        <div className="absolute inset-0 bg-[#0e0a0a]">
+          <ThreeCountertopHero />
+        </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.45) 60%, rgba(14,10,10,0.7) 100%)'
+        }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-px bg-[#800020]" />
