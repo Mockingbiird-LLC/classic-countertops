@@ -69,6 +69,9 @@ const serviceCards = [
 
 export default function HomePage() {
   const [googleReviews, setGoogleReviews] = useState<typeof reviewsData>(reviewsData);
+  const [hoveredCounty, setHoveredCounty] = useState<string | null>(null);
+  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const ohioSvgRef = useRef<SVGSVGElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const whyClassicRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
@@ -483,20 +486,46 @@ export default function HomePage() {
               <div className="relative w-full max-w-md">
                 <div className="absolute -inset-4 bg-[#800020]/10 blur-2xl rounded-full" />
                 <svg
+                  ref={ohioSvgRef}
                   viewBox="0 0 420 390"
                   className="relative w-full drop-shadow-2xl"
                   xmlns="http://www.w3.org/2000/svg"
+                  onMouseLeave={() => setHoveredCounty(null)}
                 >
+                  <defs>
+                    {/* Clip county boundaries to state interior so strokes don't cross the state edge */}
+                    <clipPath id="ohio-state-clip">
+                      <path d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z" />
+                    </clipPath>
+                  </defs>
+
                   {/* State fill */}
                   <path
                     d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z"
                     fill="#160e0e"
                   />
 
-                  {/* Ohio county boundaries — real Census Bureau geometry */}
-                  <g stroke="#800020" strokeWidth="0.5" opacity="0.4" fill="#160e0e">
+                  {/* Ohio county boundaries — clipped to state interior, with hover for tooltips */}
+                  <g stroke="#800020" strokeWidth="0.5" opacity="0.4" fill="#160e0e" clipPath="url(#ohio-state-clip)">
                     {ohioCounties.map((county) => (
-                      <path key={county.name} d={county.d} />
+                      <path
+                        key={county.name}
+                        d={county.d}
+                        className="cursor-pointer hover:opacity-70 hover:fill-[#1e1010]"
+                        style={{ transition: 'opacity 0.15s, fill 0.15s' }}
+                        onMouseEnter={(e: React.MouseEvent<SVGPathElement>) => {
+                          if (!ohioSvgRef.current) return;
+                          const rect = ohioSvgRef.current.getBoundingClientRect();
+                          const x = ((e.clientX - rect.left) / rect.width) * 420;
+                          const y = ((e.clientY - rect.top) / rect.height) * 390;
+                          setHoveredCounty(county.name);
+                          setTooltipPos({
+                            x: Math.min(Math.max(x - 45, 4), 300),
+                            y: Math.max(y - 28, 4),
+                          });
+                        }}
+                        onMouseLeave={() => setHoveredCounty(null)}
+                      />
                     ))}
                   </g>
 
@@ -521,12 +550,13 @@ export default function HomePage() {
                     viewport={{ once: true }}
                   />
 
-                  {/* Ohio state border — animates in */}
+                  {/* Ohio state border — animates in, sits exactly on state edge */}
                   <motion.path
                     d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z"
-                    fill="none"
+                    fill="#160e0e"
                     stroke="#800020"
-                    strokeWidth="2"
+                    strokeWidth="4"
+                    style={{ paintOrder: 'stroke fill' }}
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
                     transition={{ duration: 1.5, ease: 'easeInOut' }}
@@ -591,6 +621,29 @@ export default function HomePage() {
                   <text x="140" y="272" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif" opacity="0.15">
                     88 Counties
                   </text>
+
+                  {/* County name tooltip on hover */}
+                  {hoveredCounty && (
+                    <g transform={`translate(${tooltipPos.x}, ${tooltipPos.y})`} style={{ pointerEvents: 'none' }}>
+                      <rect
+                        x="0" y="0"
+                        width={hoveredCounty.length * 6.5 + 16}
+                        height="18"
+                        rx="3"
+                        fill="#1C1C1C"
+                        opacity="0.92"
+                      />
+                      <text
+                        x="8" y="13"
+                        fill="white"
+                        fontSize="9"
+                        fontFamily="sans-serif"
+                        fontWeight="500"
+                      >
+                        {hoveredCounty} County
+                      </text>
+                    </g>
+                  )}
                 </svg>
               </div>
             </AnimatedSection>
