@@ -47,28 +47,7 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: 'Steven',
-    role: 'Fabrication Specialist',
-    bio: 'Brings precision and dedication to every countertop project, ensuring every cut and edge meets the highest standard.',
-  },
-  {
-    name: 'Jon',
-    role: 'Installation Expert',
-    bio: 'Meticulous attention to detail and years of hands-on experience make every installation seamless and built to last.',
-  },
-  {
-    name: 'Dustin',
-    role: 'Craftsman',
-    bio: 'Committed to quality and customer satisfaction, Dustin takes pride in the finished product left in every home.',
-  },
-  {
-    name: 'Kevin',
-    role: 'Lead Technician',
-    bio: 'Experienced in all aspects of countertop fabrication and repair, Kevin ensures every project is delivered on time and on budget.',
-  },
-];
+const fabricatorNames = ['Steven', 'Jon', 'Dustin', 'Kevin'];
 
 export default function AboutPage() {
   return (
@@ -183,18 +162,35 @@ export default function AboutPage() {
             <div className="divider-gold mt-6" />
           </AnimatedSection>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, i) => (
-              <AnimatedSection key={member.name} delay={i * 0.1} className="border border-[#E8E4DC] bg-white p-10">
-                <div className="w-16 h-16 bg-[#800020] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
-                  {member.name[0]}
-                </div>
-                <h3 className="text-[#1C1C1C] font-semibold text-xl mb-1">{member.name}</h3>
-                <p className="text-[#800020] text-xs tracking-wider uppercase mb-4">{member.role}</p>
-                <div className="w-8 h-px bg-[#800020] mb-5" />
-                <p className="text-[#6B6B6B] text-sm leading-relaxed">{member.bio}</p>
-              </AnimatedSection>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Bill — Owner */}
+            <AnimatedSection direction="left" className="border border-[#E8E4DC] bg-white p-10">
+              <div className="w-16 h-16 bg-[#800020] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                B
+              </div>
+              <h3 className="text-[#1C1C1C] font-semibold text-xl mb-1">Bill</h3>
+              <p className="text-[#800020] text-xs tracking-wider uppercase mb-4">Owner &amp; Founder</p>
+              <div className="w-8 h-px bg-[#800020] mb-5" />
+              <p className="text-[#6B6B6B] text-sm leading-relaxed">
+                With over 20 years in countertop fabrication, Bill founded Classic Countertops LLC on a commitment to honest pricing and premium craftsmanship for Northeast Ohio homeowners.
+              </p>
+            </AnimatedSection>
+
+            {/* The Fabricators — names only */}
+            <AnimatedSection direction="right" className="border border-[#E8E4DC] bg-white p-10">
+              <div className="w-16 h-16 bg-[#1C1C1C] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                F
+              </div>
+              <h3 className="text-[#1C1C1C] font-semibold text-xl mb-1">The Fabricators</h3>
+              <div className="w-8 h-px bg-[#800020] mb-5 mt-4" />
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+                {fabricatorNames.map((name) => (
+                  <div key={name} className="text-[#1C1C1C] font-medium text-sm py-2 border-b border-[#E8E4DC]">
+                    {name}
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -204,7 +200,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">Where We Work</p>
+              <p className="mb-4"><span className="inline-block bg-white text-[#800020] text-xs tracking-[0.25em] uppercase font-medium px-3 py-1">Where We Work</span></p>
               <h2 className="text-white text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
                 Serving Northeast Ohio
               </h2>
