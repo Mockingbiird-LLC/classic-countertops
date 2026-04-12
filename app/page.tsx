@@ -5,7 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import AnimatedSection from '@/components/AnimatedSection';
-import { Layers, Gem, RectangleHorizontal, Mountain, Wrench, ClipboardList, MapPin, LayoutGrid, Home, ShieldCheck } from 'lucide-react';
+import { Layers, Gem, RectangleHorizontal, Mountain, Wrench, ClipboardList, MapPin, LayoutGrid, Home, ShieldCheck, Phone } from 'lucide-react';
 
 const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
@@ -216,8 +216,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-white">
             {[
-              { label: 'Free Quotes', icon: <ClipboardList className="w-4 h-4" strokeWidth={1.5} /> },
-              { label: 'Local Akron Experts', icon: <MapPin className="w-4 h-4" strokeWidth={1.5} /> },
+              { label: 'Free Estimates', icon: <ClipboardList className="w-4 h-4" strokeWidth={1.5} /> },
+              { label: 'Serving Northeast Ohio', icon: <MapPin className="w-4 h-4" strokeWidth={1.5} /> },
               { label: 'Premium Materials', icon: <Gem className="w-4 h-4" strokeWidth={1.5} /> },
               { label: 'Repair Specialists', icon: <Wrench className="w-4 h-4" strokeWidth={1.5} /> },
             ].map(({ label, icon }) => (
@@ -226,8 +226,9 @@ export default function HomePage() {
                 {label}
               </span>
             ))}
-            <a href="tel:3308824220" className="font-semibold tracking-wide hover:underline">
-              ✆ (330) 882-4220
+            <a href="tel:3308824220" className="flex items-center gap-1.5 font-semibold tracking-wide hover:underline">
+              <Phone className="w-4 h-4" strokeWidth={1.5} />
+              (330) 882-4220
             </a>
           </div>
         </div>
@@ -288,9 +289,9 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
             {[
-              { value: 500, suffix: '+', label: 'Projects Completed' },
+              { value: 1, suffix: ",000's", label: 'Customers Served' },
               { value: 20, suffix: '+', label: 'Years Experience' },
-              { value: 100, suffix: '%', label: 'Satisfaction Guarantee' },
+              { value: 100, suffix: '%', label: 'Locally Owned' },
               { value: 5, suffix: ' Star', label: 'Rated Service' },
             ].map((stat, i) => (
               <AnimatedSection key={stat.label} delay={i * 0.1} className="border border-white/10 p-8">
