@@ -165,7 +165,7 @@ export default function HomePage() {
       {/* ── INTRO BAND ── */}
       <section className="bg-[#800020] py-4">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-white">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:justify-between sm:gap-4 text-sm text-white">
             {[
               { label: 'Free Estimates', icon: <ClipboardList className="w-4 h-4" strokeWidth={1.5} /> },
               { label: 'Serving Northeast Ohio', icon: <MapPin className="w-4 h-4" strokeWidth={1.5} /> },
@@ -177,7 +177,7 @@ export default function HomePage() {
                 {label}
               </span>
             ))}
-            <a href="tel:3308824220" className="flex items-center gap-1.5 font-semibold tracking-wide hover:underline">
+            <a href="tel:3308824220" className="flex w-full items-center justify-center gap-1.5 font-semibold tracking-wide hover:underline sm:w-auto">
               <Phone className="w-4 h-4" strokeWidth={1.5} />
               (330) 882-4220
             </a>
