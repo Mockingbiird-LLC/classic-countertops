@@ -128,9 +128,9 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section ref={heroRef} className="relative h-screen min-h-[620px] max-h-[900px] overflow-hidden flex items-center bg-[#0e0a0a]">
+      <section ref={heroRef} className="relative h-screen min-h-[620px] max-h-[900px] overflow-hidden flex items-center bg-[#0e0a0a]" style={{ backgroundColor: '#0e0a0a' }}>
         {/* Three.js 3D countertop scene — canvas parallax on scroll */}
-        <motion.div style={{ y: canvasParallaxY }} className="absolute inset-0">
+        <motion.div style={{ y: canvasParallaxY, backgroundColor: '#0e0a0a' }} className="absolute inset-0">
           <ThreeCountertopHero />
         </motion.div>
         {/* Subtle dark vignette at bottom */}

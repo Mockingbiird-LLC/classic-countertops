@@ -51,7 +51,7 @@ export default function ThreeCountertopHero() {
       // Renderer
       renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -180,7 +180,7 @@ export default function ThreeCountertopHero() {
         const h = canvas.clientHeight;
         camera.aspect = w / h;
         applyCameraForViewport();
-        renderer.setSize(w, h);
+        renderer.setSize(w, h, false);
       };
       window.addEventListener('resize', onResize);
 
