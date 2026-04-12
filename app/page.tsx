@@ -103,7 +103,7 @@ export default function HomePage() {
               <span className="inline-flex items-center gap-3 bg-white px-5 py-2.5 shadow-md">
                 <span className="w-8 h-px bg-[#800020]" />
                 <span className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">
-                  Akron&apos;s Premier Countertop Fabrication
+                  Akron&apos;s Premier Countertop Fabricators
                 </span>
               </span>
             </motion.div>
