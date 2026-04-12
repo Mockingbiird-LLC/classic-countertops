@@ -588,7 +588,7 @@ export default function HomePage() {
         />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">Before You Replace</p>
+            <p className="mb-4"><span className="inline-block bg-white text-[#800020] text-xs tracking-[0.25em] uppercase font-medium px-3 py-1">Before You Replace</span></p>
             <h2 className="text-white text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
               Have Damaged Countertops?
             </h2>
