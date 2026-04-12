@@ -471,44 +471,42 @@ export default function HomePage() {
                   <defs>
                     {/* Ohio state outline clip path */}
                     <clipPath id="ohio-state">
-                      <path d="M78,62 C100,56 135,50 168,45 C188,42 200,44 212,42 C222,38 240,36 262,35 L312,34 L368,33 L392,33 L395,37 L395,240 C394,254 390,268 382,282 C370,298 354,315 337,329 C320,343 304,355 286,362 C269,368 252,370 234,366 C215,362 196,352 178,338 C160,324 142,306 126,288 C112,270 100,250 90,232 C84,220 78,208 78,190 L78,62 Z" />
+                      <path d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z" />
                     </clipPath>
                   </defs>
 
                   {/* State fill */}
                   <path
-                    d="M78,62 C100,56 135,50 168,45 C188,42 200,44 212,42 C222,38 240,36 262,35 L312,34 L368,33 L392,33 L395,37 L395,240 C394,254 390,268 382,282 C370,298 354,315 337,329 C320,343 304,355 286,362 C269,368 252,370 234,366 C215,362 196,352 178,338 C160,324 142,306 126,288 C112,270 100,250 90,232 C84,220 78,208 78,190 L78,62 Z"
+                    d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z"
                     fill="#160e0e"
                   />
 
                   {/* County grid lines — clipped to Ohio state */}
                   <g clipPath="url(#ohio-state)" stroke="#800020" strokeWidth="0.6" opacity="0.35" fill="none">
                     {/* Horizontal county lines (10 rows) */}
-                    <line x1="82" y1="72" x2="390" y2="72" />
-                    <line x1="82" y1="96" x2="390" y2="96" />
-                    <line x1="82" y1="120" x2="390" y2="120" />
-                    <line x1="82" y1="144" x2="390" y2="144" />
-                    <line x1="82" y1="168" x2="390" y2="168" />
-                    <line x1="82" y1="192" x2="390" y2="192" />
-                    <line x1="82" y1="216" x2="390" y2="216" />
-                    <line x1="82" y1="240" x2="390" y2="240" />
-                    <line x1="82" y1="264" x2="390" y2="264" />
-                    <line x1="82" y1="288" x2="390" y2="288" />
-                    <line x1="82" y1="312" x2="390" y2="312" />
-                    {/* Vertical county lines (8 columns) */}
-                    <line x1="116" y1="24" x2="116" y2="355" />
-                    <line x1="150" y1="24" x2="150" y2="355" />
-                    <line x1="184" y1="24" x2="184" y2="355" />
-                    <line x1="218" y1="24" x2="218" y2="355" />
-                    <line x1="252" y1="24" x2="252" y2="355" />
-                    <line x1="286" y1="24" x2="286" y2="355" />
-                    <line x1="320" y1="24" x2="320" y2="355" />
-                    <line x1="356" y1="24" x2="356" y2="355" />
+                    <line x1="20" y1="54" x2="400" y2="54" />
+                    <line x1="20" y1="86" x2="400" y2="86" />
+                    <line x1="20" y1="118" x2="400" y2="118" />
+                    <line x1="20" y1="150" x2="400" y2="150" />
+                    <line x1="20" y1="182" x2="400" y2="182" />
+                    <line x1="20" y1="214" x2="400" y2="214" />
+                    <line x1="20" y1="246" x2="400" y2="246" />
+                    <line x1="20" y1="278" x2="400" y2="278" />
+                    <line x1="20" y1="310" x2="400" y2="310" />
+                    <line x1="20" y1="342" x2="400" y2="342" />
+                    {/* Vertical county lines (7 columns) */}
+                    <line x1="71" y1="15" x2="71" y2="385" />
+                    <line x1="117" y1="15" x2="117" y2="385" />
+                    <line x1="163" y1="15" x2="163" y2="385" />
+                    <line x1="209" y1="15" x2="209" y2="385" />
+                    <line x1="255" y1="15" x2="255" y2="385" />
+                    <line x1="301" y1="15" x2="301" y2="385" />
+                    <line x1="347" y1="15" x2="347" y2="385" />
                   </g>
 
                   {/* NEO service area highlight */}
                   <motion.path
-                    d="M252,120 L252,35 L312,34 L368,33 L392,33 L395,37 L395,192 L356,192 L356,168 L320,168 L320,144 L286,144 L286,120 Z"
+                    d="M 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 L 301,153 L 301,118 L 252,118 Z"
                     fill="#800020"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 0.2 }}
@@ -516,7 +514,7 @@ export default function HomePage() {
                     viewport={{ once: true }}
                   />
                   <motion.path
-                    d="M252,120 L252,35 L312,34 L368,33 L392,33 L395,37 L395,192 L356,192 L356,168 L320,168 L320,144 L286,144 L286,120 Z"
+                    d="M 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 L 301,153 L 301,118 L 252,118 Z"
                     fill="none"
                     stroke="#800020"
                     strokeWidth="1.5"
@@ -529,7 +527,7 @@ export default function HomePage() {
 
                   {/* Ohio state border — animates in */}
                   <motion.path
-                    d="M78,62 C100,56 135,50 168,45 C188,42 200,44 212,42 C222,38 240,36 262,35 L312,34 L368,33 L392,33 L395,37 L395,240 C394,254 390,268 382,282 C370,298 354,315 337,329 C320,343 304,355 286,362 C269,368 252,370 234,366 C215,362 196,352 178,338 C160,324 142,306 126,288 C112,270 100,250 90,232 C84,220 78,208 78,190 L78,62 Z"
+                    d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z"
                     fill="none"
                     stroke="#800020"
                     strokeWidth="2"
@@ -541,13 +539,13 @@ export default function HomePage() {
 
                   {/* City dots */}
                   {[
-                    { x: 310, y: 82, label: 'Cleveland', major: true },
-                    { x: 290, y: 130, label: 'Akron', major: true },
-                    { x: 320, y: 158, label: 'Canton', major: false },
-                    { x: 248, y: 115, label: 'Medina', major: false },
-                    { x: 298, y: 107, label: 'C. Falls', major: false },
-                    { x: 340, y: 82, label: 'Lake', major: false },
-                    { x: 363, y: 105, label: 'Mahoning', major: false },
+                    { x: 294, y: 74, label: 'Cleveland', major: true },
+                    { x: 309, y: 109, label: 'Akron', major: true },
+                    { x: 321, y: 137, label: 'Canton', major: false },
+                    { x: 279, y: 103, label: 'Medina', major: false },
+                    { x: 312, y: 104, label: 'C. Falls', major: false },
+                    { x: 324, y: 57, label: 'Lake', major: false },
+                    { x: 360, y: 107, label: 'Mahoning', major: false },
                   ].map((city) => (
                     <motion.g
                       key={city.label}
@@ -580,7 +578,7 @@ export default function HomePage() {
                   ))}
 
                   {/* Compass */}
-                  <g transform="translate(130, 250)">
+                  <g transform="translate(90, 240)">
                     <circle cx="0" cy="0" r="16" fill="#0e0a0a" stroke="#800020" strokeWidth="1" opacity="0.8" />
                     <text x="0" y="-5" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif" opacity="0.8">N</text>
                     <line x1="0" y1="-12" x2="0" y2="12" stroke="#800020" strokeWidth="1" opacity="0.5" />
@@ -588,13 +586,13 @@ export default function HomePage() {
                   </g>
 
                   {/* Labels */}
-                  <text x="318" y="52" textAnchor="middle" fill="#800020" fontSize="8" fontFamily="sans-serif" fontWeight="600" letterSpacing="2" opacity="0.9">
+                  <text x="325" y="82" textAnchor="middle" fill="#800020" fontSize="8" fontFamily="sans-serif" fontWeight="600" letterSpacing="2" opacity="0.9">
                     NORTH EAST OHIO
                   </text>
-                  <text x="170" y="285" textAnchor="middle" fill="white" fontSize="8" fontFamily="sans-serif" opacity="0.25" letterSpacing="3">
+                  <text x="140" y="260" textAnchor="middle" fill="white" fontSize="8" fontFamily="sans-serif" opacity="0.25" letterSpacing="3">
                     OHIO
                   </text>
-                  <text x="170" y="295" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif" opacity="0.15">
+                  <text x="140" y="272" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif" opacity="0.15">
                     88 Counties
                   </text>
                 </svg>
