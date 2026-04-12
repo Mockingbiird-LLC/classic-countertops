@@ -120,12 +120,12 @@ export default function ThreeCountertopHero() {
       slab.receiveShadow = true;
       scene.add(slab);
 
-      // ── Reflective floor plane ──
+      // ── Floor plane ──
       const floorGeo = new THREE.PlaneGeometry(60, 60);
       const floorMat = new THREE.MeshStandardMaterial({
-        color: 0x100c0c,
-        roughness: 0.5,
-        metalness: 0.3,
+        color: 0x080505,
+        roughness: 1.0,
+        metalness: 0.0,
       });
       const floor = new THREE.Mesh(floorGeo, floorMat);
       floor.rotation.x = -Math.PI / 2;
@@ -136,7 +136,7 @@ export default function ThreeCountertopHero() {
       // ── Lighting ──
 
       // Warm key light above-left (studio look)
-      const keyLight = new THREE.SpotLight(0xfff5e8, 180, 30, Math.PI / 7, 0.3, 1.2);
+      const keyLight = new THREE.SpotLight(0xfff5e8, 90, 30, Math.PI / 7, 0.3, 1.2);
       keyLight.position.set(-4, 10, 6);
       keyLight.castShadow = true;
       keyLight.shadow.mapSize.set(1024, 1024);
