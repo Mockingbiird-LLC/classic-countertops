@@ -110,6 +110,15 @@ const googleReviews = [
     initial: "J",
     color: "#0F9D58",
   },
+  {
+    name: "Bob School",
+    location: "Northeast Ohio",
+    rating: 5,
+    date: "17 months ago",
+    review: "Great people to work with. Stoped by and John took me back to the shop. Found my favorite, went with Quartz. Quality in product, it was all good.",
+    initial: "B",
+    color: "#1565C0",
+  },
 ];
 
 export default function HomePage() {
