@@ -56,7 +56,7 @@ export default function Footer() {
             </p>
             {/* Social */}
             <div className="flex gap-4 mt-6">
-              <a href="#" className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/70 hover:border-[#800020] hover:text-[#800020] transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/classiccountertopsllc/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/70 hover:border-[#800020] hover:text-[#800020] transition-colors" aria-label="Facebook">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
               </a>
 <a href="https://www.linkedin.com/company/classiccountertopsllc" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/70 hover:border-[#800020] hover:text-[#800020] transition-colors" aria-label="LinkedIn">
