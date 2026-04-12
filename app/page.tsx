@@ -267,7 +267,7 @@ export default function HomePage() {
                   <motion.div
                     className="w-full bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=900&q=80&auto=format&fit=crop')`,
+                      backgroundImage: `url('/kitchen-showcase.jpeg')`,
                       y: imageParallax,
                       willChange: 'transform',
                       height: 'calc(100% + 60px)',
