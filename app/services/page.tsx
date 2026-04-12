@@ -102,7 +102,7 @@ export default function ServicesPage() {
             ].map((step, i) => (
               <AnimatedSection key={step.step} delay={i * 0.1} className="relative">
                 <div className="border border-white/10 p-8 h-full">
-                  <div className="text-[#800020] text-6xl font-bold mb-6 leading-none" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <div className="gold-text text-6xl font-bold mb-6 leading-none" style={{ fontFamily: 'var(--font-playfair)' }}>
                     {step.step}
                   </div>
                   <h3 className="text-white font-semibold text-lg mb-3">{step.title}</h3>
