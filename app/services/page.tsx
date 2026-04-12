@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import AnimatedSection from '@/components/AnimatedSection';
+import ThreeCountertopHero from '@/components/ThreeCountertopHeroClient';
 import { services } from './data';
-
-const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'Services',

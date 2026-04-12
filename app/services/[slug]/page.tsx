@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 import AnimatedSection from '@/components/AnimatedSection';
 import MaterialGraphic from '@/components/MaterialGraphic';
+import ThreeCountertopHero from '@/components/ThreeCountertopHeroClient';
 import { services } from '../data';
-
-const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.id }));
