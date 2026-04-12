@@ -5,7 +5,7 @@ import { services } from './data';
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Classic Countertops LLC offers laminate, quartz, solid surface, and granite countertop fabrication and installation in Akron, Ohio — plus expert countertop repair.',
+  description: 'Classic Countertops LLC offers laminate, quartz, solid surface, and granite countertop fabrication and installation in Akron, Ohio, plus expert countertop repair.',
 };
 
 export default function ServicesPage() {
@@ -55,7 +55,7 @@ export default function ServicesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C]/70 to-transparent" />
                     <div className="absolute bottom-0 left-0 p-6">
-                      <p className="text-[#800020] text-xs tracking-[0.2em] uppercase font-medium mb-1">{service.tagline.split('—')[0].trim()}</p>
+                      <p className="text-[#800020] text-xs tracking-[0.2em] uppercase font-medium mb-1">{service.tagline}</p>
                       <h3 className="text-white text-2xl" style={{ fontFamily: 'var(--font-playfair)' }}>{service.name}</h3>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ export default function ServicesPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { step: '01', title: 'Free Consultation', desc: 'Tell us your vision. We assess your space, recommend materials, and answer every question — no obligation.' },
+              { step: '01', title: 'Free Consultation', desc: 'Tell us your vision. We assess your space, recommend materials, and answer every question. No obligation.' },
               { step: '02', title: 'Material Selection', desc: 'Browse our extensive selection of materials, colors, and finishes with our guidance.' },
               { step: '03', title: 'Precision Templating', desc: 'We measure your space with precision to ensure a perfect fit every time.' },
               { step: '04', title: 'Expert Installation', desc: 'Our experienced team fabricates and installs your countertops with care and attention to detail.' },

@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const services = [
-  'Laminate Countertops',
-  'Quartz Countertops',
-  'Solid Surface',
-  'Granite Countertops',
-  'Countertop Repair',
+  { name: 'Laminate Countertops', href: '/services/laminate' },
+  { name: 'Quartz Countertops', href: '/services/quartz' },
+  { name: 'Solid Surface', href: '/services/solid-surface' },
+  { name: 'Granite Countertops', href: '/services/granite' },
+  { name: 'Countertop Repair', href: '/services/repair' },
 ];
 
 const quickLinks = [
@@ -26,9 +26,12 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-white text-xl font-semibold">Ready to transform your space?</h3>
-            <p className="text-white/80 text-sm mt-1">Get your free quote today — no obligation.</p>
+            <p className="text-white/80 text-sm mt-1">Get your free quote today, no obligation.</p>
           </div>
-          <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-[#800020] shrink-0">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white text-white font-semibold tracking-widest uppercase text-xs hover:bg-white hover:text-[#800020] transition-all duration-300 shrink-0"
+          >
             Request a Free Quote
           </Link>
         </div>
@@ -56,6 +59,13 @@ export default function Footer() {
               <a href="#" className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/70 hover:border-[#800020] hover:text-[#800020] transition-colors" aria-label="Facebook">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
               </a>
+              <a href="#" className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/70 hover:border-[#800020] hover:text-[#800020] transition-colors" aria-label="Instagram">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="17.5" cy="6.5" r="1.5"/>
+                </svg>
+              </a>
               <a href="#" className="w-9 h-9 border border-white/20 flex items-center justify-center text-white/70 hover:border-[#800020] hover:text-[#800020] transition-colors" aria-label="LinkedIn">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
@@ -82,10 +92,10 @@ export default function Footer() {
             <h4 className="text-white text-xs font-semibold tracking-widest uppercase mb-6">Services</h4>
             <ul className="space-y-3">
               {services.map((s) => (
-                <li key={s}>
-                  <Link href="/services" className="text-white/70 text-sm hover:text-[#800020] transition-colors flex items-center gap-2">
+                <li key={s.name}>
+                  <Link href={s.href} className="text-white/70 text-sm hover:text-[#800020] transition-colors flex items-center gap-2">
                     <span className="w-3 h-px bg-[#800020] shrink-0" />
-                    {s}
+                    {s.name}
                   </Link>
                 </li>
               ))}
@@ -110,7 +120,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <svg className="w-4 h-4 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Mon–Fri: 8:00 AM – 5:00 PM<br/><em className="text-white/60">By Appointment</em></span>
+                <span>Mon-Fri: 8:00 AM to 5:00 PM<br/><em className="text-white/60">By Appointment</em></span>
               </li>
             </ul>
           </div>

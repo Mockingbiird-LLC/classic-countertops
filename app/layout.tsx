@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Classic Countertops LLC',
   },
   description:
-    "Classic Countertops LLC — Akron, Ohio's premier countertop fabrication and installation company. Laminate, quartz, solid surface, granite countertops and repair services.",
+    "Classic Countertops LLC: Akron, Ohio's premier countertop fabrication and installation company. Laminate, quartz, solid surface, granite countertops and repair services.",
   keywords: [
     'countertops Akron Ohio',
     'granite countertops',

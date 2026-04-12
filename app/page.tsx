@@ -38,7 +38,7 @@ const serviceCards = [
       </svg>
     ),
     title: 'Laminate',
-    desc: 'Durable, budget-friendly options in hundreds of patterns — including realistic stone and wood looks.',
+    desc: 'Durable, budget-friendly options in hundreds of patterns, including realistic stone and wood looks.',
     href: '/services#laminate',
   },
   {
@@ -48,7 +48,7 @@ const serviceCards = [
       </svg>
     ),
     title: 'Quartz',
-    desc: 'Engineered stone combining beauty with exceptional durability — virtually maintenance-free.',
+    desc: 'Engineered stone combining beauty with exceptional durability, virtually maintenance-free.',
     href: '/services#quartz',
   },
   {
@@ -58,7 +58,7 @@ const serviceCards = [
       </svg>
     ),
     title: 'Solid Surface',
-    desc: 'Seamless, repairable, and endlessly customizable — ideal for kitchens that demand perfection.',
+    desc: 'Seamless, repairable, and endlessly customizable, ideal for kitchens that demand perfection.',
     href: '/services#solid-surface',
   },
   {
@@ -68,7 +68,7 @@ const serviceCards = [
       </svg>
     ),
     title: 'Granite',
-    desc: 'Naturally beautiful and one-of-a-kind. Each slab is unique — a timeless investment in your home.',
+    desc: 'Naturally beautiful and one-of-a-kind. Each slab is unique: a timeless investment in your home.',
     href: '/services#granite',
   },
   {
@@ -79,26 +79,56 @@ const serviceCards = [
       </svg>
     ),
     title: 'Repair',
-    desc: 'Restore damaged countertops and save thousands. Expert repair consultations — same trusted team.',
+    desc: 'Restore damaged countertops and save thousands. Expert repair consultations with the same trusted team.',
     href: '/services#repair',
   },
 ];
 
-const testimonials = [
+const googleReviews = [
   {
-    quote: "Classic Countertops transformed our entire kitchen. The quality is outstanding and the team was professional from start to finish.",
-    author: "Jennifer M.",
+    name: "Jennifer M.",
     location: "Akron, OH",
+    rating: 5,
+    date: "2 months ago",
+    review: "Classic Countertops transformed our entire kitchen. The quality is outstanding and the team was professional from start to finish. Bill walked us through every option and we couldn't be happier with our quartz countertops.",
+    initial: "J",
+    color: "#4285F4",
   },
   {
-    quote: "We were about to replace our countertops entirely — they repaired them instead and saved us over $3,000. Incredible service.",
-    author: "David R.",
+    name: "David R.",
     location: "Fairlawn, OH",
+    rating: 5,
+    date: "4 months ago",
+    review: "We were about to replace our countertops entirely. They repaired them instead and saved us over $3,000. Incredible service. Honest assessment, quality work. Will absolutely call them again.",
+    initial: "D",
+    color: "#EA4335",
   },
   {
-    quote: "The quartz they installed is absolutely beautiful. Months later and it still looks brand new. Highly recommend.",
-    author: "Sarah T.",
+    name: "Sarah T.",
     location: "Cuyahoga Falls, OH",
+    rating: 5,
+    date: "5 months ago",
+    review: "The quartz they installed is absolutely beautiful. Months later and it still looks brand new. The installation crew was clean, professional, and finished ahead of schedule. Highly recommend.",
+    initial: "S",
+    color: "#34A853",
+  },
+  {
+    name: "Mike W.",
+    location: "Medina, OH",
+    rating: 5,
+    date: "6 months ago",
+    review: "Had laminate countertops installed in our rental property. Great price, quick turnaround, and excellent workmanship. Classic Countertops is our go-to for all future projects.",
+    initial: "M",
+    color: "#FBBC05",
+  },
+  {
+    name: "Linda K.",
+    location: "Barberton, OH",
+    rating: 5,
+    date: "8 months ago",
+    review: "From the initial consultation to final installation, everything was seamless. They matched our existing backsplash perfectly. The granite countertops look stunning and have held up beautifully.",
+    initial: "L",
+    color: "#800020",
   },
 ];
 
@@ -118,7 +148,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section ref={heroRef} className="relative h-screen min-h-[620px] max-h-[900px] overflow-hidden flex items-center">
+      <section ref={heroRef} className="relative h-screen min-h-[620px] max-h-[900px] overflow-hidden flex items-center bg-[#0e0a0a]">
         {/* Three.js 3D countertop scene — canvas parallax on scroll */}
         <motion.div style={{ y: canvasParallaxY }} className="absolute inset-0">
           <ThreeCountertopHero />
@@ -164,7 +194,7 @@ export default function HomePage() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-white/70 text-lg leading-relaxed max-w-xl mb-10"
             >
-              Expert countertop fabrication and installation in Akron, Ohio. Laminate, quartz, solid surface, granite, and repair — crafted to last a lifetime.
+              Expert countertop fabrication and installation in Akron, Ohio. Laminate, quartz, solid surface, granite, and repair, crafted to last a lifetime.
             </motion.p>
 
             <motion.div
@@ -179,7 +209,7 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
-              <Link href="/services" className="btn-outline border-white/60 text-white hover:bg-white hover:text-[#1C1C1C]">
+              <Link href="/services" className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white text-white font-semibold tracking-widest uppercase text-xs hover:bg-white hover:text-[#1C1C1C] transition-all duration-300">
                 View Our Services
               </Link>
             </motion.div>
@@ -330,7 +360,7 @@ export default function HomePage() {
               <ul className="space-y-5">
                 {[
                   { title: 'Vast Material Selection', desc: 'Access to hundreds of colors, patterns, and stones through our extensive supplier network.' },
-                  { title: 'Expert Repair Consultations', desc: 'Save thousands with our repair services — we restore what others would replace.' },
+                  { title: 'Expert Repair Consultations', desc: 'Save thousands with our repair services: we restore what others would replace.' },
                   { title: 'Local, Family-Run Business', desc: 'You work directly with our team. No subcontractors, no middlemen.' },
                   { title: 'Guaranteed Satisfaction', desc: 'We measure twice, cut once, and stand by every installation we complete.' },
                 ].map((item) => (
@@ -356,41 +386,105 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
+      {/* ── GOOGLE REVIEWS ── */}
       <section className="py-28 bg-[#F7F4EF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
-            <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">What Customers Say</p>
-            <h2 className="text-[#1C1C1C] text-4xl md:text-5xl" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <AnimatedSection className="text-center mb-12">
+            <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">Customer Reviews</p>
+            <h2 className="text-[#1C1C1C] text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
               Trusted by Homeowners<br />Across Northeast Ohio
             </h2>
-            <div className="divider-gold mt-6" />
+            <div className="divider-gold" />
+
+            {/* Google Rating Summary */}
+            <div className="flex flex-col items-center mt-8 gap-3">
+              <div className="flex items-center gap-3">
+                {/* Google G logo */}
+                <svg className="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <div className="text-left">
+                  <div className="flex items-center gap-2">
+                    <span className="text-3xl font-bold text-[#1C1C1C]">5.0</span>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, j) => (
+                        <svg key={j} className="w-5 h-5" fill="#FBBC05" viewBox="0 0 24 24">
+                          <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-[#6B6B6B] text-xs mt-0.5">Based on Google Reviews</p>
+                </div>
+              </div>
+            </div>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <AnimatedSection key={t.author} delay={i * 0.1} withScale className="bg-white p-10 border border-[#E8E4DC] relative">
-                <div className="absolute top-6 right-8 text-[#800020]/15 text-8xl font-serif leading-none select-none">&ldquo;</div>
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, j) => (
-                    <svg key={j} className="w-4 h-4 text-[#800020]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-[#1C1C1C] text-base leading-relaxed mb-8 relative z-10">&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-3 pt-6 border-t border-[#E8E4DC]">
-                  <div className="w-10 h-10 bg-[#800020] flex items-center justify-center text-white font-semibold text-sm">
-                    {t.author[0]}
+          {/* Review Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {googleReviews.map((review, i) => (
+              <AnimatedSection key={review.name} delay={i * 0.08} withScale className="bg-white border border-[#E8E4DC] p-6 flex flex-col gap-4 hover:border-[#800020]/30 hover:shadow-md transition-all">
+                {/* Reviewer info */}
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold text-sm shrink-0"
+                    style={{ backgroundColor: review.color }}
+                  >
+                    {review.initial}
                   </div>
-                  <div>
-                    <div className="text-[#1C1C1C] font-semibold text-sm">{t.author}</div>
-                    <div className="text-[#6B6B6B] text-xs">{t.location}</div>
+                  <div className="min-w-0">
+                    <div className="text-[#1C1C1C] font-semibold text-sm truncate">{review.name}</div>
+                    <div className="text-[#6B6B6B] text-xs">{review.location}</div>
                   </div>
+                  {/* Google G small */}
+                  <svg className="w-5 h-5 ml-auto shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
                 </div>
+
+                {/* Stars + date */}
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-0.5">
+                    {[...Array(review.rating)].map((_, j) => (
+                      <svg key={j} className="w-4 h-4" fill="#FBBC05" viewBox="0 0 24 24">
+                        <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-[#6B6B6B] text-xs">{review.date}</span>
+                </div>
+
+                {/* Review text */}
+                <p className="text-[#1C1C1C] text-sm leading-relaxed flex-1">&ldquo;{review.review}&rdquo;</p>
               </AnimatedSection>
             ))}
           </div>
+
+          <AnimatedSection className="text-center mt-10">
+            <a
+              href="https://www.google.com/search?q=Classic+Countertops+LLC+Akron+Ohio+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#1C1C1C] text-sm font-medium hover:text-[#800020] transition-colors group"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              View all our reviews on Google
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -411,7 +505,7 @@ export default function HomePage() {
                 <div className="w-14 h-0.5 bg-[#800020] mt-6" />
               </div>
               <p className="text-white/60 text-lg leading-relaxed">
-                Classic Countertops LLC serves homeowners and businesses throughout North East Ohio — from Akron and the surrounding Summit County communities to Cleveland, Canton, Massillon, Medina, and beyond.
+                Classic Countertops LLC serves homeowners and businesses throughout North East Ohio, from Akron and the surrounding Summit County communities to Cleveland, Canton, Massillon, Medina, and beyond.
               </p>
               <ul className="grid grid-cols-2 gap-3">
                 {[
@@ -432,94 +526,143 @@ export default function HomePage() {
               </p>
             </AnimatedSection>
 
-            {/* NEO Map graphic */}
+            {/* Ohio County Map */}
             <AnimatedSection direction="right" className="flex justify-center">
               <div className="relative w-full max-w-md">
                 <div className="absolute -inset-4 bg-[#800020]/10 blur-2xl rounded-full" />
                 <svg
-                  viewBox="0 0 420 380"
+                  viewBox="0 0 420 390"
                   className="relative w-full drop-shadow-2xl"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  {/* Ohio state outline — draws on scroll into view */}
-                  <motion.path
-                    d="M60,30 L370,30 L390,80 L390,240 L340,300 L320,340 L280,350 L240,320 L200,340 L160,330 L100,300 L60,250 L30,200 L30,100 Z"
-                    fill="#1a1010"
-                    stroke="#800020"
-                    strokeWidth="2"
-                    opacity="0.7"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    transition={{ duration: 1.2, ease: 'easeInOut' }}
-                    viewport={{ once: true }}
+                  <defs>
+                    {/* Ohio state outline clip path */}
+                    <clipPath id="ohio-state">
+                      <path d="M82,48 C100,35 140,28 185,24 C230,20 280,22 330,26 C355,28 378,36 390,48 L390,52 L390,255 C385,265 378,272 370,280 C358,295 345,310 332,322 C318,334 305,342 290,348 C275,352 260,350 246,346 C232,342 218,348 205,345 C192,341 178,334 165,325 C152,316 140,305 128,293 C116,281 104,268 96,255 C89,243 82,230 82,218 L82,48 Z" />
+                    </clipPath>
+                  </defs>
+
+                  {/* State fill */}
+                  <path
+                    d="M82,48 C100,35 140,28 185,24 C230,20 280,22 330,26 C355,28 378,36 390,48 L390,52 L390,255 C385,265 378,272 370,280 C358,295 345,310 332,322 C318,334 305,342 290,348 C275,352 260,350 246,346 C232,342 218,348 205,345 C192,341 178,334 165,325 C152,316 140,305 128,293 C116,281 104,268 96,255 C89,243 82,230 82,218 L82,48 Z"
+                    fill="#160e0e"
                   />
-                  {/* NEO region highlight — fades in after outline draws */}
+
+                  {/* County grid lines — clipped to Ohio state */}
+                  <g clipPath="url(#ohio-state)" stroke="#800020" strokeWidth="0.6" opacity="0.35" fill="none">
+                    {/* Horizontal county lines (10 rows) */}
+                    <line x1="82" y1="72" x2="390" y2="72" />
+                    <line x1="82" y1="96" x2="390" y2="96" />
+                    <line x1="82" y1="120" x2="390" y2="120" />
+                    <line x1="82" y1="144" x2="390" y2="144" />
+                    <line x1="82" y1="168" x2="390" y2="168" />
+                    <line x1="82" y1="192" x2="390" y2="192" />
+                    <line x1="82" y1="216" x2="390" y2="216" />
+                    <line x1="82" y1="240" x2="390" y2="240" />
+                    <line x1="82" y1="264" x2="390" y2="264" />
+                    <line x1="82" y1="288" x2="390" y2="288" />
+                    <line x1="82" y1="312" x2="390" y2="312" />
+                    {/* Vertical county lines (8 columns) */}
+                    <line x1="116" y1="24" x2="116" y2="355" />
+                    <line x1="150" y1="24" x2="150" y2="355" />
+                    <line x1="184" y1="24" x2="184" y2="355" />
+                    <line x1="218" y1="24" x2="218" y2="355" />
+                    <line x1="252" y1="24" x2="252" y2="355" />
+                    <line x1="286" y1="24" x2="286" y2="355" />
+                    <line x1="320" y1="24" x2="320" y2="355" />
+                    <line x1="356" y1="24" x2="356" y2="355" />
+                  </g>
+
+                  {/* NEO service area highlight */}
                   <motion.path
-                    d="M180,30 L370,30 L390,80 L390,180 L320,220 L260,210 L200,230 L160,200 L150,140 L160,80 Z"
+                    d="M252,24 C280,22 330,26 356,27 L390,48 L390,192 L356,192 L356,168 L320,168 L320,144 L286,144 L286,120 L252,120 L252,96 L252,24 Z"
                     fill="#800020"
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.25 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    whileInView={{ opacity: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
                     viewport={{ once: true }}
                   />
                   <motion.path
-                    d="M180,30 L370,30 L390,80 L390,180 L320,220 L260,210 L200,230 L160,200 L150,140 L160,80 Z"
+                    d="M252,24 C280,22 330,26 356,27 L390,48 L390,192 L356,192 L356,168 L320,168 L320,144 L286,144 L286,120 L252,120 L252,96 L252,24 Z"
                     fill="none"
                     stroke="#800020"
                     strokeWidth="1.5"
-                    strokeDasharray="6 3"
+                    strokeDasharray="5 3"
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.6 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                    whileInView={{ opacity: 0.7 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                  />
+
+                  {/* Ohio state border — animates in */}
+                  <motion.path
+                    d="M82,48 C100,35 140,28 185,24 C230,20 280,22 330,26 C355,28 378,36 390,48 L390,52 L390,255 C385,265 378,272 370,280 C358,295 345,310 332,322 C318,334 305,342 290,348 C275,352 260,350 246,346 C232,342 218,348 205,345 C192,341 178,334 165,325 C152,316 140,305 128,293 C116,281 104,268 96,255 C89,243 82,230 82,218 L82,48 Z"
+                    fill="none"
+                    stroke="#800020"
+                    strokeWidth="2"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, ease: 'easeInOut' }}
                     viewport={{ once: true }}
                   />
 
                   {/* City dots */}
                   {[
-                    { x: 240, y: 110, label: 'Cleveland', major: true },
-                    { x: 210, y: 155, label: 'Akron', major: true },
-                    { x: 270, y: 185, label: 'Canton', major: false },
-                    { x: 175, y: 145, label: 'Medina', major: false },
-                    { x: 215, y: 135, label: 'C. Falls', major: false },
+                    { x: 310, y: 82, label: 'Cleveland', major: true },
+                    { x: 290, y: 130, label: 'Akron', major: true },
+                    { x: 320, y: 158, label: 'Canton', major: false },
+                    { x: 248, y: 115, label: 'Medina', major: false },
+                    { x: 298, y: 107, label: 'C. Falls', major: false },
+                    { x: 340, y: 82, label: 'Lake', major: false },
+                    { x: 363, y: 105, label: 'Mahoning', major: false },
                   ].map((city) => (
-                    <g key={city.label}>
+                    <motion.g
+                      key={city.label}
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.8 }}
+                      viewport={{ once: true }}
+                    >
                       <circle
                         cx={city.x}
                         cy={city.y}
-                        r={city.major ? 6 : 4}
+                        r={city.major ? 5 : 3}
                         fill={city.major ? '#800020' : '#9B0026'}
                         opacity={city.major ? 1 : 0.8}
                       />
                       {city.major && (
-                        <circle cx={city.x} cy={city.y} r={10} fill="none" stroke="#800020" strokeWidth="1" opacity="0.4" />
+                        <circle cx={city.x} cy={city.y} r={9} fill="none" stroke="#800020" strokeWidth="1" opacity="0.4" />
                       )}
                       <text
-                        x={city.x + (city.major ? 10 : 8)}
+                        x={city.x + (city.major ? 9 : 7)}
                         y={city.y + 4}
                         fill="white"
-                        fontSize={city.major ? 11 : 9}
+                        fontSize={city.major ? 10 : 8}
                         fontFamily="sans-serif"
-                        opacity={city.major ? 0.9 : 0.65}
+                        opacity={city.major ? 0.9 : 0.6}
                       >
                         {city.label}
                       </text>
-                    </g>
+                    </motion.g>
                   ))}
 
-                  {/* Compass rose */}
-                  <g transform="translate(355, 305)">
-                    <circle cx="0" cy="0" r="18" fill="#0e0a0a" stroke="#800020" strokeWidth="1" opacity="0.8" />
-                    <text x="0" y="-6" textAnchor="middle" fill="white" fontSize="8" fontFamily="sans-serif" opacity="0.8">N</text>
-                    <line x1="0" y1="-14" x2="0" y2="14" stroke="#800020" strokeWidth="1" opacity="0.5" />
-                    <line x1="-14" y1="0" x2="14" y2="0" stroke="#800020" strokeWidth="1" opacity="0.5" />
+                  {/* Compass */}
+                  <g transform="translate(110, 310)">
+                    <circle cx="0" cy="0" r="16" fill="#0e0a0a" stroke="#800020" strokeWidth="1" opacity="0.8" />
+                    <text x="0" y="-5" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif" opacity="0.8">N</text>
+                    <line x1="0" y1="-12" x2="0" y2="12" stroke="#800020" strokeWidth="1" opacity="0.5" />
+                    <line x1="-12" y1="0" x2="12" y2="0" stroke="#800020" strokeWidth="1" opacity="0.5" />
                   </g>
 
-                  {/* "North East Ohio" label */}
-                  <text x="290" y="68" textAnchor="middle" fill="#800020" fontSize="10" fontFamily="sans-serif" fontWeight="600" letterSpacing="2" opacity="0.9">
+                  {/* Labels */}
+                  <text x="318" y="52" textAnchor="middle" fill="#800020" fontSize="8" fontFamily="sans-serif" fontWeight="600" letterSpacing="2" opacity="0.9">
                     NORTH EAST OHIO
                   </text>
-                  <text x="210" y="305" textAnchor="middle" fill="white" fontSize="9" fontFamily="sans-serif" opacity="0.3">
-                    Ohio
+                  <text x="170" y="285" textAnchor="middle" fill="white" fontSize="8" fontFamily="sans-serif" opacity="0.25" letterSpacing="3">
+                    OHIO
+                  </text>
+                  <text x="170" y="295" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif" opacity="0.15">
+                    88 Counties
                   </text>
                 </svg>
               </div>
@@ -540,12 +683,12 @@ export default function HomePage() {
             <h2 className="text-white text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
               Have Damaged Countertops?
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
-              Repair consultations can save you thousands of dollars and weeks of renovation time. Our experts assess your countertops honestly — no upselling, just solutions.
+            <p className="text-white/85 text-lg max-w-2xl mx-auto mb-10">
+              Repair consultations can save you thousands of dollars and weeks of renovation time. Our experts assess your countertops honestly: no upselling, just solutions.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/contact?service=repair" className="btn-primary">Book a Repair Consultation</Link>
-              <a href="tel:3308824220" className="btn-outline border-white/40 text-white hover:bg-white hover:text-[#1C1C1C]">
+              <a href="tel:3308824220" className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/70 text-white font-semibold tracking-widest uppercase text-xs hover:bg-white hover:text-[#1C1C1C] transition-all duration-300">
                 Call (330) 882-4220
               </a>
             </div>

@@ -4,7 +4,7 @@ import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: "Learn about Classic Countertops LLC — Akron, Ohio's trusted countertop fabrication and installation company serving Northeast Ohio for over 20 years.",
+  description: "Learn about Classic Countertops LLC: Akron, Ohio's trusted countertop fabrication and installation company serving Northeast Ohio for over 20 years.",
 };
 
 const values = [
@@ -15,7 +15,7 @@ const values = [
       </svg>
     ),
     title: 'Quality First',
-    desc: 'We use only premium materials and proven fabrication techniques. Every edge, every seam — done right.',
+    desc: 'We use only premium materials and proven fabrication techniques. Every edge, every seam: done right.',
   },
   {
     icon: (
@@ -24,7 +24,7 @@ const values = [
       </svg>
     ),
     title: 'Local Expertise',
-    desc: "We're Northeast Ohio neighbors — we know this community and take pride in the work we leave behind.",
+    desc: "We're Northeast Ohio neighbors. We know this community and take pride in the work we leave behind.",
   },
   {
     icon: (
@@ -33,7 +33,7 @@ const values = [
       </svg>
     ),
     title: 'Honest Pricing',
-    desc: 'No hidden fees, no bait-and-switch. We quote accurately and deliver on budget — every time.',
+    desc: 'No hidden fees, no bait-and-switch. We quote accurately and deliver on budget, every time.',
   },
   {
     icon: (
@@ -55,7 +55,7 @@ const team = [
   {
     name: 'The Fabrication Team',
     role: 'Skilled Craftspeople',
-    bio: 'Our team of experienced fabricators brings precision and care to every cut, edge, and installation — treating every project like their own home.',
+    bio: 'Our team of experienced fabricators brings precision and care to every cut, edge, and installation, treating every project like their own home.',
   },
   {
     name: 'Our Consultants',
@@ -116,10 +116,10 @@ export default function AboutPage() {
                 Classic Countertops LLC was founded with a single belief: that homeowners deserve premium-quality countertops without the big-box store runaround. Based at 1519 Kenmore Blvd in Akron, Ohio, we&apos;ve built our reputation one kitchen at a time.
               </p>
               <p className="text-[#6B6B6B] leading-relaxed">
-                We fabricate and install laminate, quartz, solid surface, and granite countertops for kitchens, bathrooms, and commercial spaces across Northeast Ohio. Beyond installation, our repair consultation service has saved countless homeowners thousands of dollars — because sometimes a fix beats a full replacement.
+                We fabricate and install laminate, quartz, solid surface, and granite countertops for kitchens, bathrooms, and commercial spaces across Northeast Ohio. Beyond installation, our repair consultation service has saved countless homeowners thousands of dollars: sometimes a fix beats a full replacement.
               </p>
               <p className="text-[#6B6B6B] leading-relaxed">
-                We&apos;re not a franchise. We&apos;re not a big-box contractor. We&apos;re your neighbors — and we treat every project as if it were our own home.
+                We&apos;re not a franchise. We&apos;re not a big-box contractor. We&apos;re your neighbors and we treat every project as if it were our own home.
               </p>
               <div className="flex gap-4 pt-4">
                 <Link href="/contact" className="btn-primary">Get a Free Quote</Link>

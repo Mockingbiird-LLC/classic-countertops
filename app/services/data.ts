@@ -29,11 +29,11 @@ export const services: Service[] = [
   {
     id: 'quartz',
     name: 'Quartz Countertops',
-    tagline: 'The best of beauty and durability — engineered to impress',
+    tagline: 'The best of beauty and durability, engineered to impress',
     description:
-      "Quartz countertops are engineered from natural quartz crystals bound with resins, creating a surface that is harder, more uniform, and virtually maintenance-free compared to natural stone. They resist scratches, stains, and bacteria without the need for sealing — making them one of the most practical premium countertop options available.",
+      "Quartz countertops are engineered from natural quartz crystals bound with resins, creating a surface that is harder, more uniform, and virtually maintenance-free compared to natural stone. They resist scratches, stains, and bacteria without the need for sealing, making them one of the most practical premium countertop options available.",
     features: [
-      'Non-porous — resists stains and bacteria',
+      'Non-porous: resists stains and bacteria',
       'No sealing required',
       'Scratch and chip resistant',
       'Consistent color and pattern throughout',
@@ -51,7 +51,7 @@ export const services: Service[] = [
       "Solid surface countertops (brands like Corian®) offer a unique advantage: seamless integration. Because seams can be made virtually invisible and the material is completely uniform throughout, solid surface is the top choice for built-in sinks, curved designs, and complex custom shapes. They can also be repaired and refinished if scratched.",
     features: [
       'Seamless joins and integrated sink options',
-      'Completely repairable — scratches can be sanded out',
+      'Completely repairable: scratches can be sanded out',
       'Non-porous and hygienic',
       'Ideal for complex custom shapes',
       'Wide range of colors and finishes',
@@ -63,9 +63,9 @@ export const services: Service[] = [
   {
     id: 'granite',
     name: 'Granite Countertops',
-    tagline: "Nature's masterpiece — permanently beautiful",
+    tagline: "Nature's masterpiece, permanently beautiful",
     description:
-      "Granite is one of the hardest natural stones on earth, making it an ideal countertop material that withstands heat, scratches, and the test of time. Each granite slab is unique — no two are alike — giving your kitchen a one-of-a-kind natural work of art. Properly sealed and maintained, granite countertops will look stunning for decades.",
+      "Granite is one of the hardest natural stones on earth, making it an ideal countertop material that withstands heat, scratches, and the test of time. Each granite slab is unique: no two are alike, giving your kitchen a one-of-a-kind natural work of art. Properly sealed and maintained, granite countertops will look stunning for decades.",
     features: [
       'Naturally heat resistant',
       'Each slab is a unique work of natural art',
@@ -80,7 +80,7 @@ export const services: Service[] = [
   {
     id: 'repair',
     name: 'Countertop Repair',
-    tagline: "Restore — don't replace. Save thousands.",
+    tagline: "Restore, don't replace. Save thousands.",
     description:
       "Before spending thousands on full countertop replacement, call us for a repair consultation. Our technicians have repaired chips, cracks, burns, delamination, and water damage in laminate, solid surface, and stone countertops. A proper repair can restore both the appearance and function of your countertops at a fraction of the replacement cost.",
     features: [
@@ -89,7 +89,7 @@ export const services: Service[] = [
       'Surface refinishing and polishing',
       'Seam repair and re-joining',
       'Water damage restoration',
-      'Honest assessment — we tell you when repair beats replacement',
+      'Honest assessment: we tell you when repair beats replacement',
     ],
     ideal: 'Homeowners with damaged countertops who want to save money without sacrificing quality.',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop',

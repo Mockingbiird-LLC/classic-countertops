@@ -17,6 +17,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesExpanded, setServicesExpanded] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
@@ -55,11 +56,14 @@ export default function Navigation() {
               </div>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            {/* Desktop Nav + Phone + CTA */}
+            <div className="hidden md:flex items-center gap-6">
+              {/* Nav links */}
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = pathname === link.href || (link.href === '/services' && pathname.startsWith('/services'));
                 const isQuote = link.href === '/contact';
+                const isServices = link.href === '/services';
+
                 if (isQuote) {
                   return (
                     <Link
@@ -71,6 +75,79 @@ export default function Navigation() {
                     </Link>
                   );
                 }
+
+                if (isServices) {
+                  return (
+                    <div
+                      key={link.href}
+                      className="relative"
+                      onMouseEnter={() => setDesktopServicesOpen(true)}
+                      onMouseLeave={() => setDesktopServicesOpen(false)}
+                    >
+                      <Link
+                        href={link.href}
+                        className={`relative text-xs font-medium tracking-widest uppercase transition-colors duration-200 border-animate pb-1 flex items-center gap-1 ${
+                          isActive
+                            ? 'text-[#800020]'
+                            : 'text-white/80 hover:text-white'
+                        }`}
+                      >
+                        {link.label}
+                        <motion.svg
+                          animate={{ rotate: desktopServicesOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="w-3 h-3 opacity-60"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </motion.svg>
+                        {isActive && (
+                          <motion.div
+                            layoutId="nav-underline"
+                            className="absolute -bottom-0.5 left-0 right-0 h-0.5 bg-[#800020]"
+                          />
+                        )}
+                      </Link>
+
+                      <AnimatePresence>
+                        {desktopServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -8 }}
+                            transition={{ duration: 0.15 }}
+                            className="absolute top-full left-0 mt-3 w-52 bg-[#1C1C1C] border border-white/10 shadow-2xl"
+                          >
+                            <div className="py-1">
+                              <Link
+                                href="/services"
+                                className="block px-4 py-2.5 text-white/60 hover:text-white hover:bg-white/5 text-xs tracking-wider uppercase border-b border-white/10 transition-colors"
+                              >
+                                All Services
+                              </Link>
+                              {services.map((s) => (
+                                <Link
+                                  key={s.id}
+                                  href={`/services/${s.id}`}
+                                  className={`block px-4 py-2.5 text-xs tracking-wide uppercase transition-colors border-b border-white/5 last:border-0 ${
+                                    pathname === `/services/${s.id}`
+                                      ? 'text-[#800020] bg-[#800020]/10'
+                                      : 'text-white/70 hover:text-white hover:bg-[#800020]/20'
+                                  }`}
+                                >
+                                  {s.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.href}
@@ -91,7 +168,21 @@ export default function Navigation() {
                   </Link>
                 );
               })}
-            </nav>
+
+              {/* Divider */}
+              <div className="w-px h-4 bg-white/20 shrink-0" />
+
+              {/* Phone + Hours — always visible */}
+              <a
+                href="tel:3308824220"
+                className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors"
+              >
+                <span className="text-[#800020] text-xs">✆</span>
+                <span className="text-xs tracking-wide">(330) 882-4220</span>
+                <span className="text-white/30 text-xs">|</span>
+                <span className="text-xs text-white/60">Mon-Fri 8AM-5PM</span>
+              </a>
+            </div>
 
             {/* Mobile Hamburger */}
             <button
@@ -113,13 +204,6 @@ export default function Navigation() {
               />
             </button>
           </div>
-        </div>
-
-        {/* Phone bar */}
-        <div className={`hidden md:flex justify-end px-8 pb-2 transition-all duration-300 ${scrolled ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
-          <a href="tel:3308824220" className="text-[#800020] text-xs tracking-wider hover:text-[#9B0026] transition-colors">
-            ✆ (330) 882-4220 — Mon–Fri 8AM–5PM
-          </a>
         </div>
       </motion.header>
 
@@ -212,7 +296,7 @@ export default function Navigation() {
             </nav>
             <div className="mt-12 pt-8 border-t border-white/10">
               <a href="tel:3308824220" className="text-[#800020] text-lg">(330) 882-4220</a>
-              <p className="text-white/70 text-sm mt-1">Mon–Fri, 8AM–5PM</p>
+              <p className="text-white/70 text-sm mt-1">Mon-Fri, 8AM-5PM</p>
             </div>
           </motion.div>
         )}

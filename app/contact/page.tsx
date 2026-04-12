@@ -311,7 +311,7 @@ export default function ContactPage() {
               },
               {
                 q: 'Do you offer repair services for all countertop materials?',
-                a: 'We repair laminate, solid surface, and some natural stone countertops. During your free consultation, we\'ll assess your countertops and give you an honest recommendation — repair or replace.',
+                a: 'We repair laminate, solid surface, and some natural stone countertops. During your free consultation, we\'ll assess your countertops and give you an honest recommendation: repair or replace.',
               },
               {
                 q: 'Do I need an appointment to visit your location?',
@@ -319,11 +319,11 @@ export default function ContactPage() {
               },
               {
                 q: 'What areas do you serve?',
-                a: 'We serve Akron and the greater Northeast Ohio area including Fairlawn, Cuyahoga Falls, Bath, Stow, Hudson, Medina, Barberton, and surrounding communities. Contact us if you\'re outside this area — we may still be able to help.',
+                a: 'We serve Akron and the greater Northeast Ohio area including Fairlawn, Cuyahoga Falls, Bath, Stow, Hudson, Medina, Barberton, and surrounding communities. Contact us if you\'re outside this area; we may still be able to help.',
               },
               {
                 q: 'Can you match my existing countertops for a partial replacement?',
-                a: 'In many cases, yes — especially with laminate and solid surface materials where we have access to a large library of colors. For natural stone, matching can be more challenging due to the natural variation in each slab.',
+                a: 'In many cases, yes, especially with laminate and solid surface materials where we have access to a large library of colors. For natural stone, matching can be more challenging due to the natural variation in each slab.',
               },
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 0.06} className="border border-[#E8E4DC] p-6">

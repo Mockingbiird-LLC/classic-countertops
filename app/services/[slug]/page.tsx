@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!service) return {};
   return {
     title: `${service.name} | Classic Countertops`,
-    description: `${service.tagline} — ${service.description.slice(0, 120)}...`,
+    description: `${service.tagline}. ${service.description.slice(0, 120)}...`,
   };
 }
 
@@ -136,7 +136,7 @@ export default async function ServicePage({
               .map((s) => (
                 <AnimatedSection key={s.id}>
                   <Link href={`/services/${s.id}`} className="group block border border-[#E8E0D8] p-6 hover:border-[#800020] transition-colors h-full">
-                    <p className="text-[#800020] text-xs tracking-[0.2em] uppercase font-medium mb-2">{s.tagline.split('—')[0].trim()}</p>
+                    <p className="text-[#800020] text-xs tracking-[0.2em] uppercase font-medium mb-2">{s.tagline}</p>
                     <h3 className="text-[#1C1C1C] text-lg mb-3 group-hover:text-[#800020] transition-colors" style={{ fontFamily: 'var(--font-playfair)' }}>
                       {s.name}
                     </h3>
