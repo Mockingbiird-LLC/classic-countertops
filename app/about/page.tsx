@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import AnimatedSection from '@/components/AnimatedSection';
+
+const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -48,19 +51,24 @@ const values = [
 
 const team = [
   {
-    name: 'Bill',
-    role: 'Founder & Lead Fabricator',
-    bio: 'With over 20 years of experience in countertop fabrication, Bill founded Classic Countertops with a simple mission: deliver exceptional quality with hometown honesty.',
+    name: 'Steven',
+    role: 'Fabrication Specialist',
+    bio: 'Brings precision and dedication to every countertop project, ensuring every cut and edge meets the highest standard.',
   },
   {
-    name: 'The Fabrication Team',
-    role: 'Skilled Craftspeople',
-    bio: 'Our team of experienced fabricators brings precision and care to every cut, edge, and installation, treating every project like their own home.',
+    name: 'Jon',
+    role: 'Installation Expert',
+    bio: 'Meticulous attention to detail and years of hands-on experience make every installation seamless and built to last.',
   },
   {
-    name: 'Our Consultants',
-    role: 'Design & Repair Specialists',
-    bio: 'From helping you choose the perfect material to assessing repair options, our consultants are here to guide you to the best solution for your budget.',
+    name: 'Dustin',
+    role: 'Craftsman',
+    bio: 'Committed to quality and customer satisfaction, Dustin takes pride in the finished product left in every home.',
+  },
+  {
+    name: 'Kevin',
+    role: 'Lead Technician',
+    bio: 'Experienced in all aspects of countertop fabrication and repair, Kevin ensures every project is delivered on time and on budget.',
   },
 ];
 
@@ -68,17 +76,20 @@ export default function AboutPage() {
   return (
     <>
       {/* ── PAGE HERO ── */}
-      <section className="relative pt-40 pb-24 bg-[#1C1C1C] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=60&auto=format&fit=crop')` }}
-        />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(196,153,60,0.08) 0%, transparent 60%)' }} />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative pt-40 pb-24 bg-[#0e0a0a] overflow-hidden">
+        {/* Three.js countertop animation background */}
+        <div className="absolute inset-0 bg-[#0e0a0a]">
+          <ThreeCountertopHero />
+        </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.45) 60%, rgba(14,10,10,0.7) 100%)'
+        }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-px bg-[#800020]" />
-              <span className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">Our Story</span>
+              <span className="inline-block bg-white text-[#800020] text-xs tracking-[0.25em] uppercase font-medium px-3 py-1">Our Story</span>
             </div>
             <h1 className="text-white text-5xl md:text-6xl leading-tight mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
               Built on Craft,<br />Driven by Community
@@ -96,11 +107,19 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
               <div className="relative">
-                <div
-                  className="aspect-square bg-cover bg-center"
-                  style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=800&q=80&auto=format&fit=crop')` }}
-                />
-                {/* Decorative gold bar */}
+                <div className="aspect-square overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps?q=1519+Kenmore+Blvd,+Akron,+Ohio+44314&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, display: 'block' }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Classic Countertops LLC — 1519 Kenmore Blvd, Akron, Ohio"
+                  />
+                </div>
+                {/* Decorative accent bars */}
                 <div className="absolute top-0 -left-4 w-1 h-32 bg-[#800020]" />
                 <div className="absolute bottom-0 -right-4 w-1 h-32 bg-[#800020]" />
               </div>
@@ -166,7 +185,7 @@ export default function AboutPage() {
             <div className="divider-gold mt-6" />
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, i) => (
               <AnimatedSection key={member.name} delay={i * 0.1} className="border border-[#E8E4DC] bg-white p-10">
                 <div className="w-16 h-16 bg-[#800020] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
