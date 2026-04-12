@@ -3,6 +3,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 import AnimatedSection from '@/components/AnimatedSection';
+import MaterialGraphic from '@/components/MaterialGraphic';
 import { services } from '../data';
 
 const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
@@ -68,13 +69,10 @@ export default async function ServicePage({
       <section className="py-28 bg-[#FAFAF8]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Image */}
+            {/* Material graphic */}
             <AnimatedSection direction="left">
               <div className="relative">
-                <div
-                  className="aspect-[3/2] bg-cover bg-center"
-                  style={{ backgroundImage: `url('${service.image}')` }}
-                />
+                <MaterialGraphic serviceId={service.id} />
                 <div className="absolute -bottom-5 -right-5 bg-[#800020] px-8 py-5">
                   <p className="text-white text-xs tracking-[0.25em] uppercase font-medium">Classic Countertops</p>
                 </div>
@@ -85,7 +83,7 @@ export default async function ServicePage({
             <AnimatedSection direction="right" className="space-y-8">
               <div>
                 <h2 className="text-[#1C1C1C] text-3xl md:text-4xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
-                  About This Service
+                  {['laminate', 'solid-surface', 'quartz', 'granite'].includes(service.id) ? 'About this Material' : 'About This Service'}
                 </h2>
                 <p className="text-[#6B6B6B] leading-relaxed text-lg">{service.description}</p>
               </div>
@@ -128,12 +126,39 @@ export default async function ServicePage({
         </div>
       </section>
 
+      {/* ── SUPPLIERS ── */}
+      {service.suppliers && service.suppliers.length > 0 && (
+        <section className="py-20 bg-[#1C1C1C]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <AnimatedSection className="mb-12">
+              <p className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium mb-4">Our Partners</p>
+              <h2 className="text-white text-3xl md:text-4xl" style={{ fontFamily: 'var(--font-playfair)' }}>
+                Trusted Suppliers
+              </h2>
+              <div className="divider-gold-left mt-6" />
+            </AnimatedSection>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.suppliers.map((supplier, i) => (
+                <AnimatedSection key={supplier.name} delay={i * 0.08}>
+                  <div className="border border-white/10 p-6 h-full">
+                    <h3 className="text-white font-semibold text-lg mb-3">{supplier.name}</h3>
+                    {supplier.description && (
+                      <p className="text-white/60 text-sm leading-relaxed">{supplier.description}</p>
+                    )}
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── OTHER SERVICES ── */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="mb-12">
             <h2 className="text-[#1C1C1C] text-3xl" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Other Services
+              Other Services and Materials
             </h2>
             <div className="divider-gold-left mt-4" />
           </AnimatedSection>

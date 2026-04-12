@@ -3,8 +3,11 @@
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Suspense } from 'react';
+
+const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
 function ContactForm() {
   const searchParams = useSearchParams();
@@ -63,7 +66,7 @@ function ContactForm() {
         <h2 className="text-[#1C1C1C] text-2xl mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
           Request a Free Quote
         </h2>
-        <p className="text-[#6B6B6B] text-sm mb-8">Fill out the form below and we&apos;ll get back to you within 1 business day.</p>
+        <p className="text-[#6B6B6B] text-sm mb-8">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
 
         <AnimatePresence mode="wait">
           {status === 'success' ? (
@@ -80,7 +83,7 @@ function ContactForm() {
               </div>
               <h3 className="text-[#1C1C1C] text-xl font-semibold mb-3">Message Sent!</h3>
               <p className="text-[#6B6B6B] text-sm">
-                Your email client should have opened. We&apos;ll respond within 1 business day.
+                Your email client should have opened. We&apos;ll respond as soon as possible.
                 <br />You can also reach us directly at{' '}
                 <a href="tel:3308824220" className="text-[#800020] hover:underline">(330) 882-4220</a>.
               </p>
@@ -188,7 +191,7 @@ function ContactForm() {
           <div className="divider-gold-left mt-6" />
         </div>
         <p className="text-[#6B6B6B] leading-relaxed">
-          Whether you&apos;re planning a full kitchen renovation or need a quick repair consultation, our team is ready to help. We respond to every inquiry within 1 business day.
+          Whether you&apos;re planning a full kitchen renovation or need a quick repair consultation, our team is ready to help. We respond to every inquiry as soon as possible.
         </p>
 
         <div className="space-y-6">
@@ -263,12 +266,16 @@ export default function ContactPage() {
   return (
     <>
       {/* ── PAGE HERO ── */}
-      <section className="relative pt-40 pb-24 bg-[#1C1C1C] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-15"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=60&auto=format&fit=crop')` }}
-        />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative pt-40 pb-24 bg-[#0e0a0a] overflow-hidden">
+        {/* Three.js countertop animation background */}
+        <div className="absolute inset-0 bg-[#0e0a0a]">
+          <ThreeCountertopHero />
+        </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.45) 60%, rgba(14,10,10,0.7) 100%)'
+        }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-px bg-[#800020]" />
@@ -278,7 +285,7 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-white/60 text-xl max-w-2xl leading-relaxed">
-              Get your free, no-obligation quote today. We respond within 1 business day.
+              Get your free, no-obligation quote today. We respond as soon as possible.
             </p>
           </AnimatedSection>
         </div>

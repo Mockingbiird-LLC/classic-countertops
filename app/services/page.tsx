@@ -57,10 +57,10 @@ export default function ServicesPage() {
                 <Link href={`/services/${service.id}`} className="group block h-full">
                   <div className="relative overflow-hidden">
                     <div
-                      className="aspect-[4/3] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                      style={{ backgroundImage: `url('${service.image}')` }}
+                      className="aspect-[4/3]"
+                      style={{ background: 'linear-gradient(135deg, #0e0a0a 0%, #1a1010 50%, #1C1C1C 100%)' }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C]/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0e0a0a] via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 p-6">
                       <p className="text-[#800020] text-xs tracking-[0.2em] uppercase font-medium mb-1">{service.tagline}</p>
                       <h3 className="text-white text-2xl" style={{ fontFamily: 'var(--font-playfair)' }}>{service.name}</h3>
@@ -102,7 +102,7 @@ export default function ServicesPage() {
             ].map((step, i) => (
               <AnimatedSection key={step.step} delay={i * 0.1} className="relative">
                 <div className="border border-white/10 p-8 h-full">
-                  <div className="text-[#800020]/30 text-6xl font-bold mb-6 leading-none" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <div className="text-[#800020] text-6xl font-bold mb-6 leading-none" style={{ fontFamily: 'var(--font-playfair)' }}>
                     {step.step}
                   </div>
                   <h3 className="text-white font-semibold text-lg mb-3">{step.title}</h3>

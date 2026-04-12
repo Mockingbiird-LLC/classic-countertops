@@ -6,6 +6,7 @@ export type Service = {
   features: string[];
   ideal: string;
   image: string;
+  suppliers?: { name: string; description?: string }[];
 };
 
 export const services: Service[] = [
@@ -25,6 +26,11 @@ export const services: Service[] = [
     ],
     ideal: 'Kitchens, rental properties, commercial spaces, and budget-conscious renovations.',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop',
+    suppliers: [
+      { name: 'Wilsonart', description: 'Premium laminate surfaces with realistic stone, wood, and abstract patterns' },
+      { name: 'Formica', description: 'Industry leader with 200+ textures and colors across multiple collections' },
+      { name: 'Panolam', description: 'High-pressure laminate with a wide range of design options' },
+    ],
   },
   {
     id: 'quartz',
@@ -42,6 +48,12 @@ export const services: Service[] = [
     ],
     ideal: 'High-use kitchens, family homes, and anyone who wants a premium look with minimal maintenance.',
     image: 'https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=800&q=80&auto=format&fit=crop',
+    suppliers: [
+      { name: 'MSI Surfaces', description: 'Extensive quartz collections including Calacatta, Carrara, and bold modern designs' },
+      { name: 'Mont Surfaces', description: 'Premium quartz slabs with consistent patterning and rich color options' },
+      { name: 'Laventa Quartz', description: 'Designer quartz with European-inspired aesthetics' },
+      { name: 'LX Hausys', description: 'HI-MACS® and ViaTerra engineered surfaces built for longevity' },
+    ],
   },
   {
     id: 'solid-surface',
@@ -59,6 +71,11 @@ export const services: Service[] = [
     ],
     ideal: 'Custom kitchen designs, healthcare environments, and commercial applications.',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop',
+    suppliers: [
+      { name: 'Corian', description: "DuPont's industry-defining solid surface with seamless integration capabilities" },
+      { name: 'LX Hausys', description: 'HI-MACS® solid surface offering thermoforming and seamless fabrication' },
+      { name: 'Livingstone Surfaces', description: 'American-made solid surface available in hundreds of colors and finishes' },
+    ],
   },
   {
     id: 'granite',
@@ -76,6 +93,11 @@ export const services: Service[] = [
     ],
     ideal: 'Luxury kitchens, homeowners investing in long-term value, and lovers of natural stone.',
     image: 'https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=800&q=80&auto=format&fit=crop',
+    suppliers: [
+      { name: 'MSI Surfaces', description: 'Vast inventory of natural granite slabs including Absolute Black and Azul Platino' },
+      { name: 'Mont Surfaces', description: 'Premium granite warehouse with rare and exotic stone varieties' },
+      { name: 'Omicron Granite', description: 'Natural stone supplier with an extensive regional slab inventory' },
+    ],
   },
   {
     id: 'repair',
