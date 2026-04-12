@@ -5,6 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import AnimatedSection from '@/components/AnimatedSection';
+import reviewsData from '../data/reviews.json';
 import { Layers, Gem, RectangleHorizontal, Mountain, Wrench, ClipboardList, MapPin, LayoutGrid, Home, ShieldCheck, Phone } from 'lucide-react';
 
 const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
@@ -64,62 +65,7 @@ const serviceCards = [
   },
 ];
 
-const googleReviews = [
-  {
-    name: "Brady B.",
-    location: "Akron, OH",
-    rating: 5,
-    date: "9 months ago",
-    review: "AMAZING! From the moment we contacted Bill about our kitchen project to when the install crew walked out of our house with a wave and a smile we could not have been happier with the experience. The staff was friendly, helpful and kind. They went out of their way to make sure that not only did we get the counters we were hoping for, but they did it all with a smile and an obvious desire for our satisfaction. We recommend Classic Countertops LLC for any type of project you might be working on! Big ups to John and Steve for their work in taking care of our new countertop and our home during installation.",
-    initial: "B",
-    color: "#4285F4",
-  },
-  {
-    name: "William Jones",
-    location: "Northeast Ohio",
-    rating: 5,
-    date: "15 months ago",
-    review: "Excellent service, installation, and outstanding quality. Really appreciated working with Bill and the crew that came out was experienced, timely, and professional. Would highly recommend to anyone. Outstanding pricing and they were exceptionally fast. We went with granite and it is stunning. Thanks for the great service!",
-    initial: "W",
-    color: "#EA4335",
-  },
-  {
-    name: "Ross Hamilton",
-    location: "Northeast Ohio",
-    rating: 5,
-    date: "17 months ago",
-    review: "These guys did the countertops when I was remodeling my kitchen. Guys did a great job with the install and the granite looks amazing. 100% recommend this company for countertops over going to home depot.",
-    initial: "R",
-    color: "#34A853",
-  },
-  {
-    name: "Teresa Kossuth",
-    location: "Barberton, OH",
-    rating: 5,
-    date: "22 months ago",
-    review: "The owner Bill and his entire staff are polite and genuinely concerned about customer satisfaction. From purchasing our countertop, to having them install, we were extremely happy with their work start to finish! You will be extremely happy!",
-    initial: "T",
-    color: "#FBBC05",
-  },
-  {
-    name: "Jason H.",
-    location: "Akron, OH",
-    rating: 5,
-    date: "23 months ago",
-    review: "Awesome experience, Classic Countertops did a beautiful job measuring building installing our countertops. We could not be happier. Professional Crew. No high pressure sales. Forget the big box stores and hire local businesses.",
-    initial: "J",
-    color: "#0F9D58",
-  },
-  {
-    name: "Bob School",
-    location: "Northeast Ohio",
-    rating: 5,
-    date: "17 months ago",
-    review: "Great people to work with. Stoped by and John took me back to the shop. Found my favorite, went with Quartz. Quality in product, it was all good.",
-    initial: "B",
-    color: "#1565C0",
-  },
-];
+const googleReviews = reviewsData;
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
