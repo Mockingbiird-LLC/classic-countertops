@@ -39,31 +39,31 @@ const serviceCards = [
     icon: <Layers className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Laminate',
     desc: 'Durable, budget-friendly options in hundreds of patterns, including realistic stone and wood looks.',
-    href: '/services#laminate',
+    href: '/services/laminate',
   },
   {
     icon: <Gem className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Quartz',
     desc: 'Engineered stone combining beauty with exceptional durability, virtually maintenance-free.',
-    href: '/services#quartz',
+    href: '/services/quartz',
   },
   {
     icon: <RectangleHorizontal className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Solid Surface',
     desc: 'Seamless, repairable, and endlessly customizable, ideal for kitchens that demand perfection.',
-    href: '/services#solid-surface',
+    href: '/services/solid-surface',
   },
   {
     icon: <Mountain className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Granite',
     desc: 'Naturally beautiful and one-of-a-kind. Each slab is unique: a timeless investment in your home.',
-    href: '/services#granite',
+    href: '/services/granite',
   },
   {
     icon: <Wrench className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Repair',
     desc: 'Restore damaged countertops and save thousands. Expert repair consultations with the same trusted team.',
-    href: '/services#repair',
+    href: '/services/repair',
   },
 ];
 
