@@ -178,6 +178,12 @@ body {
   color: white;
 }
 
+/* Logo countertops text outline for readability against varied backgrounds */
+.logo-countertops {
+  -webkit-text-stroke: 0.75px white;
+  paint-order: stroke fill;
+}
+
 /* Section divider */
 .divider-gold {
   width: 60px;

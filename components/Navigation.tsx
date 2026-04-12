@@ -52,7 +52,7 @@ export default function Navigation() {
               </div>
               <div>
                 <div className="text-white font-semibold text-sm tracking-widest uppercase leading-none">Classic</div>
-                <div className="text-[#800020] font-light text-xs tracking-[0.2em] uppercase leading-none mt-0.5">Countertops</div>
+                <div className="text-[#800020] font-light text-xs tracking-[0.2em] uppercase leading-none mt-0.5 logo-countertops">Countertops</div>
               </div>
             </Link>
 
