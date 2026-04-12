@@ -3,11 +3,8 @@
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import dynamic from 'next/dynamic';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Suspense } from 'react';
-
-const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
 function ContactForm() {
   const searchParams = useSearchParams();
@@ -267,13 +264,13 @@ export default function ContactPage() {
     <>
       {/* ── PAGE HERO ── */}
       <section className="relative pt-40 pb-24 bg-[#0e0a0a] overflow-hidden">
-        {/* Three.js countertop animation background */}
-        <div className="absolute inset-0 bg-[#0e0a0a]">
-          <ThreeCountertopHero />
-        </div>
-        {/* Dark overlay for text readability */}
+        {/* CSS pattern background */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.45) 60%, rgba(14,10,10,0.7) 100%)'
+          backgroundImage: [
+            'radial-gradient(circle at 50% 45%, rgba(128,0,32,0.22) 0%, transparent 55%)',
+            'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)',
+          ].join(', '),
+          backgroundSize: 'auto, 22px 22px',
         }} />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>

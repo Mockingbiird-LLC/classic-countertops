@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
-import ThreeCountertopHero from '@/components/ThreeCountertopHeroClient';
+import { Layers, Gem, RectangleHorizontal, Mountain, Wrench } from 'lucide-react';
 import { services } from './data';
 
 export const metadata: Metadata = {
@@ -9,18 +9,34 @@ export const metadata: Metadata = {
   description: 'Classic Countertops LLC offers laminate, quartz, solid surface, and granite countertop fabrication and installation in Akron, Ohio, plus expert countertop repair.',
 };
 
+const serviceIcons: Record<string, React.ReactNode> = {
+  laminate: <Layers className="w-16 h-16" strokeWidth={1} />,
+  quartz: <Gem className="w-16 h-16" strokeWidth={1} />,
+  'solid-surface': <RectangleHorizontal className="w-16 h-16" strokeWidth={1} />,
+  granite: <Mountain className="w-16 h-16" strokeWidth={1} />,
+  repair: <Wrench className="w-16 h-16" strokeWidth={1} />,
+};
+
+const serviceGlow: Record<string, string> = {
+  laminate: '30% 65%',
+  quartz: '70% 35%',
+  'solid-surface': '50% 55%',
+  granite: '35% 70%',
+  repair: '65% 30%',
+};
+
 export default function ServicesPage() {
   return (
     <>
       {/* ── PAGE HERO ── */}
       <section className="relative pt-40 pb-24 bg-[#0e0a0a] overflow-hidden">
-        {/* Three.js countertop animation background */}
-        <div className="absolute inset-0 bg-[#0e0a0a]">
-          <ThreeCountertopHero />
-        </div>
-        {/* Dark overlay for text readability */}
+        {/* CSS pattern background */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.45) 60%, rgba(14,10,10,0.7) 100%)'
+          backgroundImage: [
+            'radial-gradient(circle at 40% 50%, rgba(128,0,32,0.22) 0%, transparent 55%)',
+            'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)',
+          ].join(', '),
+          backgroundSize: 'auto, 22px 22px',
         }} />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
@@ -56,8 +72,19 @@ export default function ServicesPage() {
                   <div className="relative overflow-hidden">
                     <div
                       className="aspect-[4/3]"
-                      style={{ background: 'linear-gradient(135deg, #0e0a0a 0%, #1a1010 50%, #1C1C1C 100%)' }}
+                      style={{
+                        background: '#0e0a0a',
+                        backgroundImage: [
+                          `radial-gradient(circle at ${serviceGlow[service.id] ?? '50% 50%'}, rgba(128,0,32,0.28) 0%, transparent 60%)`,
+                          'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)',
+                        ].join(', '),
+                        backgroundSize: 'auto, 18px 18px',
+                      }}
                     />
+                    {/* Material icon — centered, large, subtle */}
+                    <div className="absolute inset-0 flex items-center justify-center text-[#800020] opacity-25 group-hover:opacity-40 transition-opacity">
+                      {serviceIcons[service.id]}
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0e0a0a] via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 p-6">
                       <p className="text-[#800020] text-xs tracking-[0.2em] uppercase font-medium mb-1">{service.tagline}</p>
