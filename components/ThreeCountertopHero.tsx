@@ -120,13 +120,6 @@ export default function ThreeCountertopHero() {
       slab.receiveShadow = true;
       scene.add(slab);
 
-      // ── Edge profile (slight bevel illusion via thin front strip) ──
-      const edgeGeo = new THREE.BoxGeometry(8.01, 0.06, 0.06);
-      const edgeMat = new THREE.MeshStandardMaterial({ color: 0x2a2420, roughness: 0.4, metalness: 0.1 });
-      const edgeFront = new THREE.Mesh(edgeGeo, edgeMat);
-      edgeFront.position.set(0, -0.08, 1.78);
-      scene.add(edgeFront);
-
       // ── Reflective floor plane ──
       const floorGeo = new THREE.PlaneGeometry(60, 60);
       const floorMat = new THREE.MeshStandardMaterial({
@@ -250,7 +243,7 @@ export default function ThreeCountertopHero() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ display: 'block' }}
+      style={{ display: 'block', backgroundColor: '#0e0a0a' }}
     />
   );
 }

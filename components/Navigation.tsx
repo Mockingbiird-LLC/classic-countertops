@@ -177,7 +177,6 @@ export default function Navigation() {
                 href="tel:3308824220"
                 className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors"
               >
-                <span className="text-[#800020] text-xs">✆</span>
                 <span className="text-xs tracking-wide">(330) 882-4220</span>
                 <span className="text-white/30 text-xs">|</span>
                 <span className="text-xs text-white/60">Mon-Fri 8AM-5PM</span>
