@@ -653,13 +653,13 @@ export default function HomePage() {
 
       {/* ── REPAIR CTA ── */}
       <section className="py-24 bg-[#0e0a0a] relative overflow-hidden">
-        {/* Three.js countertop animation background */}
-        <div className="absolute inset-0 bg-[#0e0a0a]">
-          <ThreeCountertopHero />
-        </div>
-        {/* Dark overlay for text readability */}
+        {/* Dark CSS pattern background */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.4) 50%, rgba(14,10,10,0.65) 100%)',
+          backgroundImage: [
+            'radial-gradient(circle at 60% 40%, rgba(128,0,32,0.22) 0%, transparent 55%)',
+            'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)',
+          ].join(', '),
+          backgroundSize: 'auto, 22px 22px',
         }} />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
