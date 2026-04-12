@@ -67,9 +67,8 @@ const serviceCards = [
   },
 ];
 
-const googleReviews = reviewsData;
-
 export default function HomePage() {
+  const [googleReviews, setGoogleReviews] = useState<typeof reviewsData>(reviewsData);
   const heroRef = useRef<HTMLDivElement>(null);
   const whyClassicRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
@@ -79,6 +78,17 @@ export default function HomePage() {
     offset: ['start end', 'end start'],
   });
   const imageParallax = useTransform(whyClassicProgress, [0, 1], ['0px', '-30px']);
+
+  useEffect(() => {
+    fetch('/api/reviews')
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setGoogleReviews(data);
+        }
+      })
+      .catch(() => {/* keep static fallback */});
+  }, []);
 
   return (
     <>
