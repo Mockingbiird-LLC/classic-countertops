@@ -69,9 +69,6 @@ const serviceCards = [
 
 export default function HomePage() {
   const [googleReviews, setGoogleReviews] = useState<typeof reviewsData>(reviewsData);
-  const [hoveredCounty, setHoveredCounty] = useState<string | null>(null);
-  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const ohioSvgRef = useRef<SVGSVGElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const whyClassicRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
@@ -486,11 +483,9 @@ export default function HomePage() {
               <div className="relative w-full max-w-md">
                 <div className="absolute -inset-4 bg-[#800020]/10 blur-2xl rounded-full" />
                 <svg
-                  ref={ohioSvgRef}
                   viewBox="0 0 420 390"
                   className="relative w-full drop-shadow-2xl"
                   xmlns="http://www.w3.org/2000/svg"
-                  onMouseLeave={() => setHoveredCounty(null)}
                 >
                   <defs>
                     {/* Clip county boundaries to state interior so strokes don't cross the state edge */}
@@ -511,20 +506,6 @@ export default function HomePage() {
                       <path
                         key={county.name}
                         d={county.d}
-                        className="cursor-pointer hover:opacity-70 hover:fill-[#1e1010]"
-                        style={{ transition: 'opacity 0.15s, fill 0.15s' }}
-                        onMouseEnter={(e: React.MouseEvent<SVGPathElement>) => {
-                          if (!ohioSvgRef.current) return;
-                          const rect = ohioSvgRef.current.getBoundingClientRect();
-                          const x = ((e.clientX - rect.left) / rect.width) * 420;
-                          const y = ((e.clientY - rect.top) / rect.height) * 390;
-                          setHoveredCounty(county.name);
-                          setTooltipPos({
-                            x: Math.min(Math.max(x - 45, 4), 300),
-                            y: Math.max(y - 28, 4),
-                          });
-                        }}
-                        onMouseLeave={() => setHoveredCounty(null)}
                       />
                     ))}
                   </g>
@@ -534,7 +515,7 @@ export default function HomePage() {
                     d="M 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 L 301,153 L 301,118 L 252,118 Z"
                     fill="#800020"
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.2 }}
+                    whileInView={{ opacity: 0.4 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                     viewport={{ once: true }}
                   />
@@ -542,10 +523,10 @@ export default function HomePage() {
                     d="M 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 L 301,153 L 301,118 L 252,118 Z"
                     fill="none"
                     stroke="#800020"
-                    strokeWidth="1.5"
+                    strokeWidth="2"
                     strokeDasharray="5 3"
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.7 }}
+                    whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.5 }}
                     viewport={{ once: true }}
                   />
@@ -618,32 +599,8 @@ export default function HomePage() {
                   <text x="140" y="260" textAnchor="middle" fill="white" fontSize="8" fontFamily="sans-serif" opacity="0.25" letterSpacing="3">
                     OHIO
                   </text>
-                  <text x="140" y="272" textAnchor="middle" fill="white" fontSize="7" fontFamily="sans-serif" opacity="0.15">
-                    88 Counties
-                  </text>
 
-                  {/* County name tooltip on hover */}
-                  {hoveredCounty && (
-                    <g transform={`translate(${tooltipPos.x}, ${tooltipPos.y})`} style={{ pointerEvents: 'none' }}>
-                      <rect
-                        x="0" y="0"
-                        width={hoveredCounty.length * 6.5 + 16}
-                        height="18"
-                        rx="3"
-                        fill="#1C1C1C"
-                        opacity="0.92"
-                      />
-                      <text
-                        x="8" y="13"
-                        fill="white"
-                        fontSize="9"
-                        fontFamily="sans-serif"
-                        fontWeight="500"
-                      >
-                        {hoveredCounty} County
-                      </text>
-                    </g>
-                  )}
+
                 </svg>
               </div>
             </AnimatedSection>
