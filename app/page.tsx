@@ -132,16 +132,16 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-4 justify-center md:justify-start"
             >
               <Link href="/contact" className="btn-primary">
-                Get a Free Quote
+                Get a Free Estimate
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
               <Link href="/services" className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white text-white font-semibold tracking-widest uppercase text-xs hover:bg-white hover:text-[#1C1C1C] transition-all duration-300">
-                View Our Services
+                View Our Specialties
               </Link>
             </motion.div>
           </motion.div>
