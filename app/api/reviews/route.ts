@@ -1,5 +1,7 @@
 import fallbackReviews from '../../../data/reviews.json';
 
+export const dynamic = 'force-static';
+
 const GOOGLE_COLORS = [
   '#4285F4',
   '#EA4335',
