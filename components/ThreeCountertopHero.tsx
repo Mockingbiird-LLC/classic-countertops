@@ -52,6 +52,7 @@ export default function ThreeCountertopHero() {
       renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+      renderer.setClearColor(0x0e0a0a, 1);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -155,6 +156,11 @@ export default function ThreeCountertopHero() {
       const rimLight = new THREE.PointLight(0x800020, 60, 12);
       rimLight.position.set(0, 2, -5);
       scene.add(rimLight);
+
+      // Gold accent light — subtle warm gold shimmer across the slab surface
+      const goldLight = new THREE.PointLight(0xc9a84c, 20, 10);
+      goldLight.position.set(3, 1.5, 2);
+      scene.add(goldLight);
 
       // Ambient
       scene.add(new THREE.AmbientLight(0x180a0a, 40));

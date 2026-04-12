@@ -71,9 +71,7 @@ export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const whyClassicRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 600], [0, 180]);
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-  const canvasParallaxY = useTransform(scrollY, [0, 400], [0, -40]);
   const { scrollYProgress: whyClassicProgress } = useScroll({
     target: whyClassicRef,
     offset: ['start end', 'end start'],
@@ -84,17 +82,13 @@ export default function HomePage() {
     <>
       {/* ── HERO ── */}
       <section ref={heroRef} className="relative h-screen min-h-[620px] max-h-[900px] overflow-hidden flex items-center bg-[#0e0a0a]" style={{ backgroundColor: '#0e0a0a' }}>
-        {/* Three.js 3D countertop scene — canvas parallax on scroll */}
-        <motion.div style={{ y: canvasParallaxY, backgroundColor: '#0e0a0a' }} className="absolute inset-0">
+        {/* Three.js 3D countertop scene */}
+        <div className="absolute inset-0 bg-[#0e0a0a]">
           <ThreeCountertopHero />
-        </motion.div>
-        {/* Subtle dark vignette at bottom */}
+        </div>
+        {/* Subtle dark vignette */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'linear-gradient(to bottom, rgba(14,10,10,0.45) 0%, rgba(14,10,10,0.15) 40%, rgba(14,10,10,0.7) 100%)',
-        }} />
-        <div className="absolute inset-0 opacity-4 pointer-events-none" style={{
-          backgroundImage: 'linear-gradient(rgba(128,0,32,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(128,0,32,0.3) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
+          background: 'linear-gradient(to bottom, rgba(14,10,10,0.5) 0%, rgba(14,10,10,0.2) 40%, rgba(14,10,10,0.75) 100%)',
         }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -103,11 +97,13 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-8"
+              className="mb-8"
             >
-              <span className="w-10 h-px bg-[#800020]" />
-              <span className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">
-                Akron&apos;s Premier Countertop Fabrication
+              <span className="inline-flex items-center gap-3 bg-white px-5 py-2.5 shadow-md">
+                <span className="w-8 h-px bg-[#800020]" />
+                <span className="text-[#800020] text-xs tracking-[0.25em] uppercase font-medium">
+                  Akron&apos;s Premier Countertop Fabrication
+                </span>
               </span>
             </motion.div>
 

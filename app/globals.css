@@ -5,8 +5,11 @@
   --foreground: #1A1A1A;
   --stone-dark: #1C1C1C;
   --stone-mid: #2D2D2D;
-  --gold: #800020;
-  --gold-light: #9B0026;
+  --burgundy: #800020;
+  --burgundy-light: #9B0026;
+  --gold: #C9A84C;
+  --gold-light: #D4B962;
+  --gold-dark: #A07828;
   --cream: #F7F4EF;
   --cream-dark: #EDE8E0;
   --text-mid: #6B6B6B;
@@ -18,8 +21,11 @@
   --color-foreground: var(--foreground);
   --color-stone-dark: var(--stone-dark);
   --color-stone-mid: var(--stone-mid);
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-light: var(--burgundy-light);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
   --color-text-mid: var(--text-mid);
@@ -44,11 +50,11 @@ body {
 
 /* Primary gradient utility */
 .gold-gradient {
-  background: linear-gradient(135deg, #800020 0%, #9B0026 50%, #800020 100%);
+  background: linear-gradient(135deg, #C9A84C 0%, #D4B962 50%, #C9A84C 100%);
 }
 
 .gold-text {
-  background: linear-gradient(135deg, #800020, #9B0026);
+  background: linear-gradient(135deg, #C9A84C, #E0C96B);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
