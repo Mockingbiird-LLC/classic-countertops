@@ -71,7 +71,7 @@ export default function ServicesPage() {
                 <Link href={`/services/${service.id}`} className="group block h-full">
                   <div className="relative overflow-hidden">
                     <div
-                      className="aspect-[4/3]"
+                      className="aspect-[16/9]"
                       style={{
                         background: '#0e0a0a',
                         backgroundImage: [
@@ -82,7 +82,7 @@ export default function ServicesPage() {
                       }}
                     />
                     {/* Material icon — centered, large, subtle */}
-                    <div className="absolute inset-0 flex items-center justify-center text-[#800020] opacity-25 group-hover:opacity-40 transition-opacity">
+                    <div className="absolute inset-0 flex items-center justify-center text-white opacity-30 group-hover:opacity-50 transition-opacity">
                       {serviceIcons[service.id]}
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0e0a0a] via-transparent to-transparent" />
