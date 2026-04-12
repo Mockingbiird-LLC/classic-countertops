@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import AnimatedSection from '@/components/AnimatedSection';
 import reviewsData from '../data/reviews.json';
+import { ohioCounties } from '../data/ohio-counties';
 import { Layers, Gem, RectangleHorizontal, Mountain, Wrench, ClipboardList, MapPin, LayoutGrid, Home, ShieldCheck, Phone } from 'lucide-react';
 
 const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
@@ -468,40 +469,17 @@ export default function HomePage() {
                   className="relative w-full drop-shadow-2xl"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <defs>
-                    {/* Ohio state outline clip path */}
-                    <clipPath id="ohio-state">
-                      <path d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z" />
-                    </clipPath>
-                  </defs>
-
                   {/* State fill */}
                   <path
                     d="M 25,48 C 60,47 100,46 134,46 C 160,47 185,62 207,72 C 224,76 240,73 252,71 C 264,69 280,68 294,68 C 305,63 315,55 323,50 C 342,38 360,28 372,31 L 395,22 L 395,153 C 393,162 390,172 385,179 C 381,188 379,199 377,207 C 372,225 369,240 366,251 C 344,267 322,280 305,288 C 278,308 262,322 250,332 C 242,348 238,363 231,372 C 224,369 216,365 209,361 C 200,354 192,348 183,342 C 163,345 146,347 130,347 C 121,340 115,330 109,320 C 95,320 83,320 71,320 C 63,315 57,311 52,306 C 42,312 33,326 25,338 L 25,48 Z"
                     fill="#160e0e"
                   />
 
-                  {/* County grid lines — clipped to Ohio state */}
-                  <g clipPath="url(#ohio-state)" stroke="#800020" strokeWidth="0.6" opacity="0.35" fill="none">
-                    {/* Horizontal county lines (10 rows) */}
-                    <line x1="20" y1="54" x2="400" y2="54" />
-                    <line x1="20" y1="86" x2="400" y2="86" />
-                    <line x1="20" y1="118" x2="400" y2="118" />
-                    <line x1="20" y1="150" x2="400" y2="150" />
-                    <line x1="20" y1="182" x2="400" y2="182" />
-                    <line x1="20" y1="214" x2="400" y2="214" />
-                    <line x1="20" y1="246" x2="400" y2="246" />
-                    <line x1="20" y1="278" x2="400" y2="278" />
-                    <line x1="20" y1="310" x2="400" y2="310" />
-                    <line x1="20" y1="342" x2="400" y2="342" />
-                    {/* Vertical county lines (7 columns) */}
-                    <line x1="71" y1="15" x2="71" y2="385" />
-                    <line x1="117" y1="15" x2="117" y2="385" />
-                    <line x1="163" y1="15" x2="163" y2="385" />
-                    <line x1="209" y1="15" x2="209" y2="385" />
-                    <line x1="255" y1="15" x2="255" y2="385" />
-                    <line x1="301" y1="15" x2="301" y2="385" />
-                    <line x1="347" y1="15" x2="347" y2="385" />
+                  {/* Ohio county boundaries — real Census Bureau geometry */}
+                  <g stroke="#800020" strokeWidth="0.5" opacity="0.4" fill="#160e0e">
+                    {ohioCounties.map((county) => (
+                      <path key={county.name} d={county.d} />
+                    ))}
                   </g>
 
                   {/* NEO service area highlight */}
