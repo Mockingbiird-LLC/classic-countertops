@@ -5,6 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import AnimatedSection from '@/components/AnimatedSection';
+import { Layers, Gem, RectangleHorizontal, Mountain, Wrench, ClipboardList, MapPin, LayoutGrid, Home, ShieldCheck } from 'lucide-react';
 
 const ThreeCountertopHero = dynamic(() => import('@/components/ThreeCountertopHero'), { ssr: false });
 
@@ -32,52 +33,31 @@ function Counter({ target, suffix = '' }: { target: number; suffix?: string }) {
 
 const serviceCards = [
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-      </svg>
-    ),
+    icon: <Layers className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Laminate',
     desc: 'Durable, budget-friendly options in hundreds of patterns, including realistic stone and wood looks.',
     href: '/services#laminate',
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10" />
-      </svg>
-    ),
+    icon: <Gem className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Quartz',
     desc: 'Engineered stone combining beauty with exceptional durability, virtually maintenance-free.',
     href: '/services#quartz',
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
-      </svg>
-    ),
+    icon: <RectangleHorizontal className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Solid Surface',
     desc: 'Seamless, repairable, and endlessly customizable, ideal for kitchens that demand perfection.',
     href: '/services#solid-surface',
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-      </svg>
-    ),
+    icon: <Mountain className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Granite',
     desc: 'Naturally beautiful and one-of-a-kind. Each slab is unique: a timeless investment in your home.',
     href: '/services#granite',
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    icon: <Wrench className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Repair',
     desc: 'Restore damaged countertops and save thousands. Expert repair consultations with the same trusted team.',
     href: '/services#repair',
@@ -235,11 +215,14 @@ export default function HomePage() {
       <section className="bg-[#800020] py-4">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-white">
-            {['Free Quotes', 'Local Akron Experts', 'Premium Materials', 'Repair Specialists'].map((label) => (
+            {[
+              { label: 'Free Quotes', icon: <ClipboardList className="w-4 h-4" strokeWidth={1.5} /> },
+              { label: 'Local Akron Experts', icon: <MapPin className="w-4 h-4" strokeWidth={1.5} /> },
+              { label: 'Premium Materials', icon: <Gem className="w-4 h-4" strokeWidth={1.5} /> },
+              { label: 'Repair Specialists', icon: <Wrench className="w-4 h-4" strokeWidth={1.5} /> },
+            ].map(({ label, icon }) => (
               <span key={label} className="flex items-center gap-2 font-medium">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                {icon}
                 {label}
               </span>
             ))}
@@ -359,16 +342,14 @@ export default function HomePage() {
               </p>
               <ul className="space-y-5">
                 {[
-                  { title: 'Vast Material Selection', desc: 'Access to hundreds of colors, patterns, and stones through our extensive supplier network.' },
-                  { title: 'Expert Repair Consultations', desc: 'Save thousands with our repair services: we restore what others would replace.' },
-                  { title: 'Local, Family-Run Business', desc: 'You work directly with our team. No subcontractors, no middlemen.' },
-                  { title: 'Guaranteed Satisfaction', desc: 'We measure twice, cut once, and stand by every installation we complete.' },
+                  { icon: <LayoutGrid className="w-4 h-4 text-[#800020]" strokeWidth={1.5} />, title: 'Vast Material Selection', desc: 'Access to hundreds of colors, patterns, and stones through our extensive supplier network.' },
+                  { icon: <Wrench className="w-4 h-4 text-[#800020]" strokeWidth={1.5} />, title: 'Expert Repair Consultations', desc: 'Save thousands with our repair services: we restore what others would replace.' },
+                  { icon: <Home className="w-4 h-4 text-[#800020]" strokeWidth={1.5} />, title: 'Local, Family-Run Business', desc: 'You work directly with our team. No subcontractors, no middlemen.' },
+                  { icon: <ShieldCheck className="w-4 h-4 text-[#800020]" strokeWidth={1.5} />, title: 'Guaranteed Satisfaction', desc: 'We measure twice, cut once, and stand by every installation we complete.' },
                 ].map((item) => (
                   <li key={item.title} className="flex gap-4">
                     <div className="w-10 h-10 border border-[#800020] flex items-center justify-center shrink-0 mt-0.5">
-                      <svg className="w-4 h-4 text-[#800020]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                      {item.icon}
                     </div>
                     <div>
                       <h4 className="text-[#1C1C1C] font-semibold text-sm mb-1">{item.title}</h4>
