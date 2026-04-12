@@ -581,12 +581,16 @@ export default function HomePage() {
       </section>
 
       {/* ── REPAIR CTA ── */}
-      <section className="py-24 bg-[#1C1C1C] relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=60&auto=format&fit=crop')` }}
-        />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <section className="py-24 bg-[#0e0a0a] relative overflow-hidden">
+        {/* Three.js countertop animation background */}
+        <div className="absolute inset-0 bg-[#0e0a0a]">
+          <ThreeCountertopHero />
+        </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'linear-gradient(to bottom, rgba(14,10,10,0.55) 0%, rgba(14,10,10,0.4) 50%, rgba(14,10,10,0.65) 100%)',
+        }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <AnimatedSection>
             <p className="mb-4"><span className="inline-block bg-white text-[#800020] text-xs tracking-[0.25em] uppercase font-medium px-3 py-1">Before You Replace</span></p>
             <h2 className="text-white text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
