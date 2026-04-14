@@ -50,7 +50,7 @@ const serviceCards = [
   {
     icon: <RectangleHorizontal className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Solid Surface',
-    desc: 'Seamless, repairable, and endlessly customizable, ideal for kitchens that demand perfection.',
+    desc: 'Inconspicuous, repairable, and endlessly customizable, ideal for kitchens that demand perfection.',
     href: '/services/solid-surface',
   },
   {
