@@ -50,7 +50,6 @@ export const services: Service[] = [
     suppliers: [
       { name: 'MSI Surfaces', description: 'Extensive quartz collections including Calacatta, Carrara, and bold modern designs' },
       { name: 'Mont Surfaces', description: 'Premium quartz slabs with consistent patterning and rich color options' },
-      { name: 'Laventa Quartz', description: 'Designer quartz with European-inspired aesthetics' },
       { name: 'Viatera', description: 'Premium engineered quartz surfaces built for longevity' },
     ],
   },
