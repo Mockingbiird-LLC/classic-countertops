@@ -179,7 +179,7 @@ export default function Navigation() {
               >
                 <span className="text-xs tracking-wide">(330) 882-4220</span>
                 <span className="text-white/30 text-xs">|</span>
-                <span className="text-xs text-white/60">Mon-Fri 8AM-5PM</span>
+                <span className="text-xs text-white/60">Mon-Fri 8AM-2:30PM | After 2:30 & Sat by Appt</span>
               </a>
             </div>
 
@@ -295,7 +295,8 @@ export default function Navigation() {
             </nav>
             <div className="mt-12 pt-8 border-t border-white/10">
               <a href="tel:3308824220" className="text-[#800020] text-lg">(330) 882-4220</a>
-              <p className="text-white/70 text-sm mt-1">Mon-Fri, 8AM-5PM</p>
+              <p className="text-white/70 text-sm mt-1">Mon-Fri 8AM–2:30PM</p>
+              <p className="text-white/70 text-sm">2:30–5PM & Sat by Appointment</p>
             </div>
           </motion.div>
         )}

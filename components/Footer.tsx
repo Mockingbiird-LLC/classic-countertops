@@ -113,7 +113,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <svg className="w-4 h-4 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Mon-Fri: 8:00 AM to 5:00 PM<br/><em className="text-white/60">By Appointment</em></span>
+                <span>Mon-Fri: 8:00 AM – 2:30 PM<br/>2:30 – 5:00 PM <em className="text-white/60">By Appointment</em><br/>Saturday: <em className="text-white/60">By Appointment</em></span>
               </li>
             </ul>
           </div>
