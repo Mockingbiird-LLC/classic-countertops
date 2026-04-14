@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" role="img" aria-label="Classic Countertops logomark">
+  <!-- Square frame -->
+  <rect x="1.5" y="1.5" width="77" height="77" stroke="#C4993C" stroke-width="1"/>
+  <!-- Corner accent marks (precision / craftsman mark style) -->
+  <polyline points="1.5,18 1.5,1.5 18,1.5" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <polyline points="62,1.5 78.5,1.5 78.5,18" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <polyline points="1.5,62 1.5,78.5 18,78.5" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <polyline points="62,78.5 78.5,78.5 78.5,62" stroke="#C4993C" stroke-width="2.5" stroke-linecap="square" fill="none"/>
+  <!--
+    Stylized C lettermark
+    Center: (40, 40), outer radius: 23, inner radius: 15
+    Horizontal terminals at y = 29.91 and y = 50.09 (half-angle ≈ 26° from horizontal)
+    Outer upper: (60.67, 29.91)  Outer lower: (60.67, 50.09)
+    Inner upper: (51.10, 29.91)  Inner lower: (51.10, 50.09)
+  -->
+  <path d="M60.67,29.91 A23,23,0,1,0,60.67,50.09 L51.1,50.09 A15,15,0,1,1,51.1,29.91 Z" fill="#C4993C"/>
+</svg>
