@@ -552,7 +552,6 @@ export default function HomePage() {
                     { x: 321, y: 137, label: 'Canton', major: false },
                     { x: 279, y: 103, label: 'Medina', major: false },
                     { x: 312, y: 104, label: 'C. Falls', major: false },
-                    { x: 360, y: 107, label: 'Mahoning', major: false },
                   ].map((city) => (
                     <motion.g
                       key={city.label}
