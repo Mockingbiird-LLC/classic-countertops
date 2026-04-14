@@ -29,7 +29,6 @@ export const services: Service[] = [
     suppliers: [
       { name: 'Wilsonart', description: 'Premium laminate surfaces with realistic stone, wood, and abstract patterns' },
       { name: 'Formica', description: 'Industry leader with 200+ textures and colors across multiple collections' },
-      { name: 'Panolam', description: 'High-pressure laminate with a wide range of design options' },
     ],
   },
   {
@@ -52,17 +51,17 @@ export const services: Service[] = [
       { name: 'MSI Surfaces', description: 'Extensive quartz collections including Calacatta, Carrara, and bold modern designs' },
       { name: 'Mont Surfaces', description: 'Premium quartz slabs with consistent patterning and rich color options' },
       { name: 'Laventa Quartz', description: 'Designer quartz with European-inspired aesthetics' },
-      { name: 'LX Hausys', description: 'HI-MACS® and ViaTerra engineered surfaces built for longevity' },
+      { name: 'Viatera', description: 'Premium engineered quartz surfaces built for longevity' },
     ],
   },
   {
     id: 'solid-surface',
     name: 'Solid Surface Countertops',
-    tagline: 'Seamless beauty with unmatched versatility',
+    tagline: 'Inconspicuous beauty with unmatched versatility',
     description:
-      "Solid surface countertops (brands like Corian®) offer a unique advantage: seamless integration. Because seams can be made virtually invisible and the material is completely uniform throughout, solid surface is the top choice for built-in sinks, curved designs, and complex custom shapes. They can also be repaired and refinished if scratched.",
+      "Solid surface countertops (brands like Corian®) offer a unique advantage: inconspicuous integration. Because seams can be made virtually invisible and the material is completely uniform throughout, solid surface is the top choice for built-in sinks, curved designs, and complex custom shapes. They can also be repaired and refinished if scratched.",
     features: [
-      'Seamless joins and integrated sink options',
+      'Inconspicuous joins and integrated sink options',
       'Completely repairable: scratches can be sanded out',
       'Non-porous and hygienic',
       'Ideal for complex custom shapes',
@@ -72,9 +71,8 @@ export const services: Service[] = [
     ideal: 'Custom kitchen designs, healthcare environments, and commercial applications.',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop',
     suppliers: [
-      { name: 'Corian', description: "DuPont's industry-defining solid surface with seamless integration capabilities" },
-      { name: 'LX Hausys', description: 'HI-MACS® solid surface offering thermoforming and seamless fabrication' },
-      { name: 'Livingstone Surfaces', description: 'American-made solid surface available in hundreds of colors and finishes' },
+      { name: 'Corian', description: "DuPont's industry-defining solid surface with inconspicuous integration capabilities" },
+      { name: 'HI-Macs', description: 'HI-MACS® solid surface offering thermoforming and inconspicuous fabrication' },
     ],
   },
   {

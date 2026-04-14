@@ -463,6 +463,7 @@ export default function HomePage() {
                 {[
                   'Akron', 'Cleveland', 'Canton', 'Massillon',
                   'Medina', 'Cuyahoga Falls', 'Fairlawn', 'Barberton',
+                  'Aurora', 'Solon', 'Strongsville', 'Ravenna',
                 ].map((city) => (
                   <li key={city} className="flex items-center gap-2 text-white/70 text-sm">
                     <svg className="w-3.5 h-3.5 text-[#800020] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -551,7 +552,6 @@ export default function HomePage() {
                     { x: 321, y: 137, label: 'Canton', major: false },
                     { x: 279, y: 103, label: 'Medina', major: false },
                     { x: 312, y: 104, label: 'C. Falls', major: false },
-                    { x: 324, y: 57, label: 'Lake', major: false },
                     { x: 360, y: 107, label: 'Mahoning', major: false },
                   ].map((city) => (
                     <motion.g
@@ -657,7 +657,7 @@ export default function HomePage() {
               {
                 icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>,
                 label: 'Hours',
-                value: 'Mon–Fri: 8:00 AM – 5:00 PM',
+                value: 'Mon–Fri: 8am – 2:30pm, available 2:30 – 5pm, and Sat by appointment',
                 href: null,
               },
             ].map((item) => (

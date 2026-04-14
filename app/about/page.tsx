@@ -47,7 +47,7 @@ const values = [
   },
 ];
 
-const fabricatorNames = ['Steven', 'Jon', 'Dustin', 'Kevin'];
+const fabricatorNames = ['Steven', 'Jon', 'Dustin', 'Kevin', 'Logan', 'Jarred'];
 
 export default function AboutPage() {
   return (
@@ -176,14 +176,24 @@ export default function AboutPage() {
               </p>
             </AnimatedSection>
 
-            {/* The Fabricators — names only */}
+            {/* Larry — Office */}
             <AnimatedSection direction="right" className="border border-[#E8E4DC] bg-white p-10">
+              <div className="w-16 h-16 bg-[#800020] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                L
+              </div>
+              <h3 className="text-[#1C1C1C] font-semibold text-xl mb-1">Larry</h3>
+              <p className="text-[#800020] text-xs tracking-wider uppercase mb-4">Office</p>
+              <div className="w-8 h-px bg-[#800020] mb-5" />
+            </AnimatedSection>
+
+            {/* The Fabricators — names only */}
+            <AnimatedSection className="border border-[#E8E4DC] bg-white p-10 lg:col-span-2">
               <div className="w-16 h-16 bg-[#1C1C1C] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
                 F
               </div>
               <h3 className="text-[#1C1C1C] font-semibold text-xl mb-1">The Fabricators</h3>
               <div className="w-8 h-px bg-[#800020] mb-5 mt-4" />
-              <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3">
                 {fabricatorNames.map((name) => (
                   <div key={name} className="text-[#1C1C1C] font-medium text-sm py-2 border-b border-[#E8E4DC]">
                     {name}
@@ -209,7 +219,7 @@ export default function AboutPage() {
                 Based in Akron, we serve homeowners and businesses across the greater Northeast Ohio area including Akron, Fairlawn, Cuyahoga Falls, Bath, Stow, Hudson, Medina, and surrounding communities.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Akron', 'Fairlawn', 'Cuyahoga Falls', 'Bath', 'Stow', 'Hudson', 'Medina', 'Barberton', 'Norton'].map((city) => (
+                {['Akron', 'Fairlawn', 'Cuyahoga Falls', 'Bath', 'Stow', 'Hudson', 'Medina', 'Barberton', 'Norton', 'Aurora', 'Solon', 'Strongsville', 'Ravenna'].map((city) => (
                   <span key={city} className="px-4 py-2 border border-white/20 text-white/60 text-sm">
                     {city}
                   </span>
@@ -244,7 +254,7 @@ export default function AboutPage() {
                     <svg className="w-5 h-5 text-[#800020] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <span>Mon–Fri: 8:00 AM – 5:00 PM (By Appointment)</span>
+                    <span>Mon–Fri: 8am – 2:30pm, available 2:30 – 5pm, and Saturday by appointment</span>
                   </div>
                 </div>
                 <Link href="/contact" className="btn-primary w-full justify-center mt-4">

@@ -214,7 +214,7 @@ function ContactForm() {
             {
               icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>,
               label: 'Hours',
-              content: 'Monday – Friday\n8:00 AM – 5:00 PM\n(By Appointment)',
+              content: 'Monday – Friday\n8am – 2:30pm\nAvailable 2:30 – 5pm\nSaturday by appointment',
               href: null,
             },
           ].map((item) => (
