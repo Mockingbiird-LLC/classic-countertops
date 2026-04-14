@@ -179,7 +179,7 @@ export default function Navigation() {
               >
                 <span className="text-xs tracking-wide">(330) 882-4220</span>
                 <span className="text-white/30 text-xs">|</span>
-                <span className="text-xs text-white/60">Mon-Fri 8AM-2:30PM | After 2:30 & Sat by Appt</span>
+                <span className="text-xs text-white/60">Mon-Fri 8AM-2:30PM | 2:30-5PM & Sat by Appt</span>
               </a>
             </div>
 

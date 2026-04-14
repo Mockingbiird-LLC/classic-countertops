@@ -50,7 +50,7 @@ const serviceCards = [
   {
     icon: <RectangleHorizontal className="w-7 h-7" strokeWidth={1.5} />,
     title: 'Solid Surface',
-    desc: 'Inconspicuous, repairable, and endlessly customizable, ideal for kitchens that demand perfection.',
+    desc: 'Inconspicuous seams, repairable, and endlessly customizable, ideal for kitchens that demand perfection.',
     href: '/services/solid-surface',
   },
   {
@@ -233,14 +233,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          <AnimatedSection className="text-center mt-12">
-            <Link href="/services" className="btn-primary">
-              Explore All Services
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -360,7 +352,7 @@ export default function HomePage() {
                 </svg>
                 <div className="text-left">
                   <div className="flex items-center gap-2">
-                    <span className="text-3xl font-bold text-[#1C1C1C]">5.0</span>
+                    <span className="text-3xl font-bold text-[#1C1C1C]">4.6</span>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, j) => (
                         <svg key={j} className="w-5 h-5" fill="#FBBC05" viewBox="0 0 24 24">
@@ -400,7 +392,7 @@ export default function HomePage() {
                   </svg>
                 </div>
 
-                {/* Stars + date */}
+                {/* Stars */}
                 <div className="flex items-center gap-2">
                   <div className="flex gap-0.5">
                     {[...Array(review.rating)].map((_, j) => (
@@ -409,7 +401,6 @@ export default function HomePage() {
                       </svg>
                     ))}
                   </div>
-                  <span className="text-[#6B6B6B] text-xs">{review.date}</span>
                 </div>
 
                 {/* Review text */}
