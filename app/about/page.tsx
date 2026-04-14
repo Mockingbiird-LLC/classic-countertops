@@ -162,7 +162,7 @@ export default function AboutPage() {
             <div className="divider-gold mt-6" />
           </AnimatedSection>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
             {/* Bill — Owner */}
             <AnimatedSection direction="left" className="border border-[#E8E4DC] bg-white p-10">
               <div className="w-16 h-16 bg-[#800020] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
@@ -187,7 +187,7 @@ export default function AboutPage() {
             </AnimatedSection>
 
             {/* The Fabricators — names only */}
-            <AnimatedSection className="border border-[#E8E4DC] bg-white p-10 lg:col-span-2">
+            <AnimatedSection className="border border-[#E8E4DC] bg-white p-10">
               <div className="w-16 h-16 bg-[#1C1C1C] flex items-center justify-center text-white text-xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
                 F
               </div>
