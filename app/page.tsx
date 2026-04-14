@@ -277,7 +277,7 @@ export default function HomePage() {
                     }}
                   >
                     <Image
-                      src="/classic-countertops/kitchen-showcase.jpeg"
+                      src="/kitchen-showcase.jpeg"
                       alt="Classic Countertops kitchen showcase"
                       fill
                       className="object-cover object-center"
