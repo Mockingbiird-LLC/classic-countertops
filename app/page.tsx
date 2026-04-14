@@ -68,7 +68,6 @@ const serviceCards = [
 ];
 
 export default function HomePage() {
-  const [googleReviews, setGoogleReviews] = useState<typeof reviewsData>(reviewsData);
   const heroRef = useRef<HTMLDivElement>(null);
   const whyClassicRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
@@ -78,17 +77,6 @@ export default function HomePage() {
     offset: ['start end', 'end start'],
   });
   const imageParallax = useTransform(whyClassicProgress, [0, 1], ['0px', '-30px']);
-
-  useEffect(() => {
-    fetch('/api/reviews')
-      .then((r) => r.json())
-      .then((data) => {
-        if (Array.isArray(data) && data.length > 0) {
-          setGoogleReviews(data);
-        }
-      })
-      .catch(() => {/* keep static fallback */});
-  }, []);
 
   return (
     <>
@@ -369,7 +357,7 @@ export default function HomePage() {
 
           {/* Review Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {googleReviews.map((review, i) => (
+            {reviewsData.map((review, i) => (
               <AnimatedSection key={review.name} delay={i * 0.08} withScale className="bg-white border border-[#E8E4DC] p-6 flex flex-col gap-4 hover:border-[#800020]/30 hover:shadow-md transition-all">
                 {/* Reviewer info */}
                 <div className="flex items-center gap-3">
